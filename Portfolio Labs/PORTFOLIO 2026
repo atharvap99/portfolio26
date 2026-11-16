@@ -1,0 +1,202 @@
+import './App.css';
+
+function App() 
+{
+  return (
+    <>
+      <header className="header">
+        <nav className="navbar">
+          <div className="logo-container">
+            <a href="#hero" className="logo-text">
+              SS
+            </a>
+          </div>
+
+          <ul className="nav-links">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main className="container">
+
+        {/* Hero Section */}
+        <section id="hero" className="hero">
+          <p className="eyebrow">PRODUCT DESIGNER</p>
+
+          <h1>
+            Atharva Pardeshi
+          </h1>
+
+          <p className="hero-description">
+            UX & Product Designer focused on creating thoughtful digital
+            experiences, meaningful interactions, and products that solve
+            real-world problems.
+          </p>
+
+          <div className="hero-links">
+            <a href="#projects" className="button primary-button">
+              View Projects
+            </a>
+
+            <a href="#contact" className="button secondary-button">
+              Get in touch
+            </a>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="section about">
+          <p className="section-label">01 — ABOUT</p>
+
+          <h2>
+            Designing at the intersection of people, technology and
+            experience.
+          </h2>
+
+          <p>
+            I am a Product Designer with a background in Industrial Design
+            and experience designing digital products and experiences.
+            I enjoy understanding complex problems, exploring ideas and
+            turning them into simple, intuitive experiences.
+          </p>
+
+          <p>
+            My approach combines user research, interaction design,
+            visual design and product thinking to create experiences
+            that are both useful and engaging.
+          </p>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="section projects">
+          <p className="section-label">02 — SELECTED WORK</p>
+
+          <h2>Projects</h2>
+
+          <div className="project-grid">
+
+            {/* Project 1 */}
+            <article className="project-card">
+              <div className="project-number">01</div>
+
+              <div>
+                <p className="project-category">
+                  PRODUCT DESIGN · UX
+                </p>
+
+                <h3>Project One</h3>
+
+                <p>
+                  A product design case study exploring a complex problem
+                  and transforming it into a simple, intuitive experience.
+                </p>
+
+                <a href="#contact" className="project-link">
+                  View case study →
+                </a>
+              </div>
+            </article>
+
+            {/* Project 2 */}
+            <article className="project-card">
+              <div className="project-number">02</div>
+
+              <div>
+                <p className="project-category">
+                  UX · INTERACTION DESIGN
+                </p>
+
+                <h3>Project Two</h3>
+
+                <p>
+                  An experience design project focused on understanding
+                  users, identifying opportunities and designing meaningful
+                  interactions.
+                </p>
+
+                <a href="#contact" className="project-link">
+                  View case study →
+                </a>
+              </div>
+            </article>
+
+            {/* Project 3 */}
+            <article className="project-card">
+              <div className="project-number">03</div>
+
+              <div>
+                <p className="project-category">
+                  DIGITAL PRODUCT · DESIGN SYSTEM
+                </p>
+
+                <h3>Project Three</h3>
+
+                <p>
+                  A digital product project focused on creating a scalable
+                  interface and consistent design system.
+                </p>
+
+                <a href="#contact" className="project-link">
+                  View case study →
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="section contact">
+          <p className="section-label">03 — CONTACT</p>
+
+          <h2>Let's work together.</h2>
+
+          <p>
+            I'm always open to discussing interesting products,
+            collaborations and design opportunities.
+          </p>
+
+          <div className="contact-links">
+            <a href="mailto:your.email@example.com">
+              Email →
+            </a>
+
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn →
+            </a>
+
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram →
+            </a>
+          </div>
+        </section>
+
+      </main>
+
+      <footer className="footer">
+        <p>
+          © {new Date().getFullYear()} Atharva Pardeshi
+        </p>
+      </footer>
+    </>
+  );
+}
+
+export default App;
