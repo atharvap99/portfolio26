@@ -1,238 +1,88 @@
 import { Link } from 'react-router-dom';
-
-import profileImage from '../assets/profile.jpg';
-
+import designerDoodle from '../assets/designer-doodle.png';
+import SectionHeading from '../components/SectionHeading';
+import Testimonials from '../components/Testimonials';
+import { workCategories } from '../data/work';
 
 function Home() {
-
   return (
-
-    <div className="page">
-
-
-      {/* ================= HERO ================= */}
-
-      <section className="hero">
-
-        <div className="hero-text">
-
-          <p className="eyebrow">
-            UX / PRODUCT DESIGNER
-          </p>
-
-          <h1>
-            Atharva
-            <br />
-            Pardeshi.
-          </h1>
-
-          <p className="hero-description">
-
-            Product Designer with a background in Industrial
-            Design, creating thoughtful digital products,
-            meaningful interactions and experiences for
-            real people.
-
-          </p>
-
-
-          <div className="hero-buttons">
-
-            <Link
-              to="/work"
-              className="button primary"
-            >
-              View my work →
-            </Link>
-
-            <Link
-              to="/about"
-              className="button secondary"
-            >
-              About me
-            </Link>
-
+    <div className="home-page">
+      <section className="home-hero page-shell">
+        <div className="hero-copy">
+          <p className="eyebrow"><span className="status-dot" /> UX / PRODUCT DESIGNER · INDUSTRIAL DESIGN ROOTS</p>
+          <h1>Atharva<br /><span>Pardeshi</span><i>.</i></h1>
+          <div className="hero-bottom">
+            <p>Designing thoughtful digital products and experiences, grounded in how people actually live and work.</p>
+            <div className="hero-actions">
+              <Link className="button button-orange" to="/work">Explore work <span>↗</span></Link>
+              <Link className="button button-outline" to="/about">A little about me</Link>
+            </div>
           </div>
-
         </div>
-
-
-        {/* Profile image */}
-
-        <div className="hero-image">
-
-          <img
-            src={profileImage}
-            alt="Atharva Pardeshi"
-          />
-
+        <div className="hero-art">
+          <div className="portrait-frame"><img src={designerDoodle} alt="Hand-drawn illustration of a designer with a pencil, bag, camera, and interface sketches" /></div>
+          <div className="hero-stamp"><span>PEOPLE</span><span>×</span><span>PRODUCT</span></div>
         </div>
-
+        <div className="hero-bottomline"><span>PORTFOLIO / 2026</span><span>SCROLL TO EXPLORE <b>↓</b></span><span>DESIGN / RESEARCH / MAKING</span></div>
       </section>
 
-
-
-      {/* ================= INTRO ================= */}
-
-      <section className="section intro">
-
-        <p className="section-label">
-          01 — APPROACH
-        </p>
-
-
-        <div className="intro-content">
-
-          <h2>
-            I turn complex problems into
-            <span> simple experiences.</span>
-          </h2>
-
-          <p>
-            My approach combines user research, interaction
-            design, visual design and product thinking to
-            create experiences that are useful, intuitive
-            and engaging.
-          </p>
-
+      <section className="intro-section page-shell">
+        <SectionHeading index="01" label="Approach" note="Human by nature. Systems by design." />
+        <div className="intro-statement">
+          <h2>Make the complex<br />feel <em>considered.</em></h2>
+          <div>
+            <p>My background in Industrial Design shapes how I think about digital products: as connected systems, not isolated screens.</p>
+            <p>I bring research, interaction design, visual craft, and product thinking together to make experiences feel clear and useful.</p>
+            <Link className="text-link" to="/about">More about my approach <span>↗</span></Link>
+          </div>
         </div>
-
       </section>
 
-
-
-      {/* ================= SELECTED WORK ================= */}
-
-      <section className="section">
-
-        <div className="section-heading">
-
-          <p className="section-label">
-            02 — SELECTED WORK
-          </p>
-
-          <Link
-            to="/work"
-            className="view-link"
-          >
-            View all work →
+      <section className="work-preview page-shell">
+        <SectionHeading index="02" label="Selected work" note="Two parts of the practice" />
+        <div className="category-grid">
+          <Link className="category-card academic-card" to={workCategories.academic.path}>
+            <div className="category-art art-academic">
+              <span className="art-index">01</span><span className="art-ring ring-one" /><span className="art-ring ring-two" /><span className="art-cross">+</span>
+              <span className="art-label">STUDY / EXPLORE / MAKE</span>
+            </div>
+            <div className="category-meta"><div><p>ACADEMIC & PERSONAL</p><h3>Questions worth<br />following.</h3></div><span className="arrow-circle">↗</span></div>
           </Link>
-
-        </div>
-
-
-        <div className="project-grid">
-
-
-          {/* Project 01 */}
-
-          <Link
-            to="/work"
-            className="project-card"
-          >
-
-            <div className="project-image">
-
-              <span>
-                PROJECT IMAGE
-              </span>
-
+          <Link className="category-card client-card" to={workCategories.client.path}>
+            <div className="category-art art-client">
+              <span className="art-index">02</span><span className="art-panel" /><span className="art-label">PARTNER / DESIGN / DELIVER</span>
             </div>
-
-            <div className="project-info">
-
-              <div>
-
-                <p>
-                  PRODUCT DESIGN · UX
-                </p>
-
-                <h3>
-                  Project One
-                </h3>
-
-              </div>
-
-              <span>
-                01
-              </span>
-
-            </div>
-
+            <div className="category-meta"><div><p>CONTRACT & CLIENT</p><h3>Work made<br />together.</h3></div><span className="arrow-circle">↗</span></div>
           </Link>
-
-
-
-          {/* Project 02 */}
-
-          <Link
-            to="/work"
-            className="project-card"
-          >
-
-            <div className="project-image">
-
-              <span>
-                PROJECT IMAGE
-              </span>
-
-            </div>
-
-            <div className="project-info">
-
-              <div>
-
-                <p>
-                  UX · INTERACTION DESIGN
-                </p>
-
-                <h3>
-                  Project Two
-                </h3>
-
-              </div>
-
-              <span>
-                02
-              </span>
-
-            </div>
-
-          </Link>
-
         </div>
-
+        <div className="work-preview-footer"><span>PROJECT ARCHIVE / IN PROGRESS</span><Link className="text-link" to="/work">View all work <span>↗</span></Link></div>
       </section>
 
+      <Testimonials />
 
-
-      {/* ================= CTA ================= */}
-
-      <section className="section home-contact">
-
-        <p className="eyebrow">
-          LET'S CONNECT
-        </p>
-
-        <h2>
-          Have a project
-          <br />
-          in mind?
-        </h2>
-
-        <a
-          href="mailto:your.email@example.com"
-          className="large-link"
-        >
-          Let's talk →
-        </a>
-
+      <section className="design-quote page-shell">
+        <p className="eyebrow">DESIGN / VALUE</p>
+        <blockquote>“Good design is good business.”</blockquote>
+        <div><span>Thomas J. Watson</span><span>Chairman of IBM</span></div>
       </section>
 
+      <section className="home-about-band">
+        <div className="home-about-inner page-shell">
+          <p className="eyebrow">A NOTE ON THE PRACTICE</p>
+          <h2>From physical things<br />to digital <span>worlds.</span></h2>
+          <div className="home-about-bottom"><p>Experience across product design, SaaS, research, and material thinking.</p><Link className="button button-blue" to="/about">Meet Atharva <span>↗</span></Link></div>
+        </div>
+      </section>
+
+      <section className="home-photo-link page-shell">
+        <SectionHeading index="04" label="Outside the frame" note="Photography / observation" />
+        <div className="photo-teaser">
+          <div className="photo-teaser-graphic"><span>LIGHT / FORM / PLACE</span><span className="photo-teaser-mark">LOOK<br />CLOSER.</span></div>
+          <div><h2>Paying attention<br />is a practice.</h2><p>Photography is a way to slow down and notice small details in the world around me.</p><Link className="text-link" to="/photography">Explore photography <span>↗</span></Link></div>
+        </div>
+      </section>
     </div>
-
   );
 }
-
 
 export default Home;

@@ -1,237 +1,78 @@
+import designerDoodle from '../assets/designer-doodle.png';
+import SectionHeading from '../components/SectionHeading';
+import { Link } from 'react-router-dom';
+
+const skillGroups = [
+  { title: 'UX / PRODUCT', skills: ['UX Design', 'Product Design', 'Interaction Design', 'User Research', 'Prototyping'] },
+  { title: 'VISUAL', skills: ['UI Design', 'Visual Design', 'Design Systems', 'Typography', 'Branding'] },
+  { title: 'TOOLS', skills: ['Figma', 'Framer', 'Adobe', 'AI Design Tools'] },
+];
+
+const experiences = [
+  {
+    years: '2026 — PRESENT',
+    company: 'University of Limerick',
+    role: 'Master’s in Interaction and Experience Design',
+    detail: 'Global Ambassador · Content Creation',
+  },
+  {
+    years: 'DEC 2025 — MAY 2026',
+    company: 'Freelance',
+    role: 'Freelance Designer',
+    detail: 'Independent practice',
+  },
+  {
+    years: '2021 — 2025',
+    company: 'Korn Ferry',
+    role: 'Product Designer',
+    detail: 'UX · Product Design · SaaS',
+  },
+  {
+    years: '2020 — 2021',
+    company: 'Harissons Bags',
+    role: 'Industrial Design',
+    detail: 'Product Design · Research · CMF',
+  },
+];
+
 function About() {
-
   return (
-
-    <div className="page">
-
-
-      <section className="page-hero">
-
-        <p className="eyebrow">
-          02 — ABOUT
-        </p>
-
-        <h1>
-          Designer,
-          <br />
-          <span>problem solver.</span>
-        </h1>
-
-        <p className="page-description">
-
-          I enjoy understanding people, technology and the
-          systems that connect them.
-
-        </p>
-
-      </section>
-
-
-
-      {/* ABOUT */}
-
-      <section className="section">
-
-        <p className="section-label">
-          MY STORY
-        </p>
-
-
-        <div className="about-layout">
-
-          <div className="about-image">
-
-            <span>
-              YOUR PHOTO
-            </span>
-
+    <div className="page-shell about-page">
+      <header className="page-intro">
+        <p className="eyebrow">A LITTLE ABOUT ME / 05</p>
+        <h1>Designer,<br /><span>problem solver.</span></h1>
+        <p className="page-deck">I enjoy understanding people, technology, and the systems that connect them.</p>
+      </header>
+      <section className="about-story">
+        <SectionHeading index="01" label="My story" note="From objects to interfaces" />
+        <div className="about-story-grid">
+          <figure className="about-portrait"><img src={designerDoodle} alt="Hand-drawn designer illustration with product and interface sketches" /><figcaption>INDUSTRIAL DESIGN / DIGITAL PRODUCTS</figcaption></figure>
+          <div className="about-prose">
+            <p className="prose-lead">Industrial design gave me a whole-system perspective. I now bring it to UX and digital product design.</p>
+            <p>I work across product thinking, research, interaction design, and visual design—connecting an interface to the experience around it.</p>
+            <p>I enjoy working on complex problems and transforming them into simple, useful, and engaging experiences.</p>
+            <Link className="text-link" to="/contact">Start a conversation <span>↗</span></Link>
           </div>
-
-
-          <div className="about-text">
-
-            <p>
-
-              My background in Industrial Design shaped the
-              way I approach problems. It taught me to think
-              about products as complete experiences rather
-              than isolated objects.
-
-            </p>
-
-
-            <p>
-
-              Today, I focus primarily on UX and Product
-              Design, bringing together research, interaction
-              design, visual design and product thinking.
-
-            </p>
-
-
-            <p>
-
-              I enjoy working on complex problems and
-              transforming them into simple, useful and
-              engaging experiences.
-
-            </p>
-
-          </div>
-
         </div>
-
       </section>
-
-
-
-      {/* EXPERIENCE */}
-
-      <section className="section">
-
-        <p className="section-label">
-          EXPERIENCE
-        </p>
-
-
-        <div className="experience">
-
-
-          <div className="experience-item">
-
-            <span>
-              2021 — 2025
-            </span>
-
-            <div>
-
-              <h2>
-                Korn Ferry
-              </h2>
-
-              <p>
-                Product Designer
-              </p>
-
-              <small>
-                UX · Product Design · SaaS
-              </small>
-
-            </div>
-
-          </div>
-
-
-
-          <div className="experience-item">
-
-            <span>
-              2020 — 2021
-            </span>
-
-            <div>
-
-              <h2>
-                Harissons Bags
-              </h2>
-
-              <p>
-                Industrial Design
-              </p>
-
-              <small>
-                Product Design · Research · CMF
-              </small>
-
-            </div>
-
-          </div>
-
+      <section className="about-experience">
+        <SectionHeading index="02" label="Experience" note="A few chapters" />
+        <div className="experience-list">
+          {experiences.map((experience, index) => (
+            <article className="experience-row" key={experience.company}>
+              <span className="experience-date">{experience.years}</span>
+              <div><h2>{experience.company}</h2><p>{experience.role}</p><small>{experience.detail}</small></div>
+              <span className="experience-index">0{index + 1}</span>
+            </article>
+          ))}
         </div>
-
       </section>
-
-
-
-      {/* SKILLS */}
-
-      <section className="section">
-
-        <p className="section-label">
-          SKILLS
-        </p>
-
-
-        <div className="skills">
-
-          <div>
-
-            <h3>
-              UX / PRODUCT
-            </h3>
-
-            <p>
-              UX Design
-              <br />
-              Product Design
-              <br />
-              Interaction Design
-              <br />
-              User Research
-              <br />
-              Prototyping
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <h3>
-              VISUAL
-            </h3>
-
-            <p>
-              UI Design
-              <br />
-              Visual Design
-              <br />
-              Design Systems
-              <br />
-              Typography
-              <br />
-              Branding
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <h3>
-              TOOLS
-            </h3>
-
-            <p>
-              Figma
-              <br />
-              Framer
-              <br />
-              Adobe
-              <br />
-              AI Design Tools
-            </p>
-
-          </div>
-
-        </div>
-
+      <section className="about-skills">
+        <SectionHeading index="03" label="Capabilities" note="Tools and ways of thinking" />
+        <div className="skills-grid">{skillGroups.map((group, i) => <div className="skill-column" key={group.title}><span className="skill-index">0{i + 1}</span><h3>{group.title}</h3><ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul></div>)}</div>
       </section>
-
     </div>
-
   );
 }
-
 
 export default About;

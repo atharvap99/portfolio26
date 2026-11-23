@@ -1,203 +1,68 @@
-import './App.css';
-
+import { useEffect } from 'react';
 import {
   BrowserRouter,
-  Routes,
-  Route,
   Link,
+  Route,
+  Routes,
   useLocation,
 } from 'react-router-dom';
-
-import Home from './pages/Home';
-import Work from './pages/Work';
+import './App.css';
+import SiteFooter from './components/SiteFooter';
+import SiteHeader from './components/SiteHeader';
 import About from './pages/About';
+import AcademicWork from './pages/AcademicWork';
+import CaseStudy from './pages/CaseStudy';
+import ClientWork from './pages/ClientWork';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
 import Photography from './pages/Photography';
+import Work from './pages/Work';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
-function Navbar() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname]);
 
-  const location = useLocation();
-
-  return (
-    <header className="header">
-
-      <nav className="navbar">
-
-        {/* Logo */}
-
-        <Link to="/" className="logo">
-          AP.
-        </Link>
-
-
-        {/* Navigation */}
-
-        <div className="nav-links">
-
-          <Link
-            to="/"
-            className={location.pathname === '/' ? 'active' : ''}
-          >
-            Home
-          </Link>
-
-          <Link
-            to="/work"
-            className={location.pathname === '/work' ? 'active' : ''}
-          >
-            Work
-          </Link>
-
-          <Link
-            to="/about"
-            className={location.pathname === '/about' ? 'active' : ''}
-          >
-            About
-          </Link>
-
-          <Link
-            to="/photography"
-            className={
-              location.pathname === '/photography'
-                ? 'active'
-                : ''
-            }
-          >
-            Photography
-          </Link>
-
-        </div>
-
-
-        {/* Contact */}
-
-        <a
-          href="mailto:your.email@example.com"
-          className="nav-contact"
-        >
-          Let's talk →
-        </a>
-
-      </nav>
-
-    </header>
-  );
+  return null;
 }
 
-
-
-function Footer() {
-
+function NotFound() {
   return (
-
-    <footer className="footer">
-
-      <div className="footer-main">
-
-        <div>
-
-          <p className="footer-label">
-            HAVE A PROJECT IN MIND?
-          </p>
-
-          <a
-            href="mailto:atharvadesigns99@gmail.com"
-            className="footer-email"
-          >
-            atharvadesigns99@gmail.com
-          </a>
-
-        </div>
-
-
-        <div className="footer-links">
-
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn ↗
-          </a>
-
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram ↗
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div className="footer-bottom">
-
-        <p>
-          © {new Date().getFullYear()} Atharva Pardeshi
-        </p>
-
-        <p>
-          Designed & built by Atharva
-        </p>
-
-      </div>
-
-    </footer>
-
+    <section className="not-found page-shell">
+      <p className="eyebrow">404 / PAGE NOT FOUND</p>
+      <h1>Lost in<br /><span>the margins.</span></h1>
+      <Link className="button button-orange" to="/">Back to home ↗</Link>
+    </section>
   );
 }
-
-
 
 function App() {
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   return (
-
-    <BrowserRouter>
-
+    <BrowserRouter basename={basename}>
+      <ScrollToTop />
       <div className="site">
-
-        <Navbar />
-
+        <SiteHeader />
         <main>
-
           <Routes>
-
-            <Route
-              path="/"
-              element={<Home />}
-            />
-
-            <Route
-              path="/work"
-              element={<Work />}
-            />
-
-            <Route
-              path="/about"
-              element={<About />}
-            />
-
-            <Route
-              path="/photography"
-              element={<Photography />}
-            />
-
+            <Route path="/" element={<Home />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/work/academic" element={<AcademicWork />} />
+            <Route path="/work/client" element={<ClientWork />} />
+            <Route path="/case-study/:slug" element={<CaseStudy />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/photography" element={<Photography />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
-
         </main>
-
-        <Footer />
-
+        <SiteFooter />
       </div>
-
     </BrowserRouter>
-
   );
 }
-
 
 export default App;

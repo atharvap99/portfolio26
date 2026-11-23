@@ -1,19 +1,37 @@
 :root {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #1b1c19;
+  background: #f4f1e9;
   font-synthesis: none;
-
   text-rendering: optimizeLegibility;
-
   -webkit-font-smoothing: antialiased;
-
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  --paper: #f4f1e9;
+  --paper-deep: #ebe6da;
+  --ink: #1b1c19;
+  --muted: #66665f;
+  --line: #d5d0c4;
+  --orange: #f87137;
+  --blue: #304bb8;
+  --display: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-html,
-body,
-#root {
-  min-width: 320px;
+* { box-sizing: border-box; }
+html { min-width: 320px; scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+body, button, a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+::selection { color: var(--paper); background: var(--blue); }
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
 
-  min-height: 100%;
-
-  margin: 0;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
