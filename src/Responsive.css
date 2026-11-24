@@ -13,9 +13,6 @@
   .navigation-link {
     font-size: 12px;
   }
-  .nav-availability {
-    display: none;
-  }
   .hero-copy h1 {
     font-size: clamp(68px, 12vw, 112px);
   }
@@ -53,10 +50,10 @@
     font-size: 20px;
   }
   .navigation-links {
-    gap: clamp(7px, 2vw, 13px);
+    gap: clamp(5px, 1.6vw, 10px);
   }
   .navigation-link {
-    font-size: 11px;
+    font-size: 10px;
   }
   .home-hero {
     min-height: auto;
@@ -498,7 +495,7 @@
   .footer-meta {
     grid-template-columns: auto 1fr auto;
     gap: 12px;
-    font-size: 10px;
+    font-size: 11px;
   }
   .footer-meta-right {
     gap: 10px;
@@ -511,7 +508,7 @@
   .footer-meta {
     grid-template-columns: auto 1fr;
     gap: 12px;
-    font-size: 10px;
+    font-size: 11px;
   }
   .footer-credit {
     justify-self: end;

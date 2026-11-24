@@ -123,7 +123,7 @@ export const portfolioProjects: PortfolioProject[] = [
 
 export const videographyProject = {
   slug: 'interactive-media-videography',
-  title: 'Interactive Media Videography Project',
+  title: 'Videography Project',
   category: 'academic' as const,
   discipline: 'INTERACTIVE MEDIA · VIDEOGRAPHY',
   reflectionTitle: 'Perfume Advertisement Cinematography',
