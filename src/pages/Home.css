@@ -42,23 +42,24 @@
   font-style: normal;
 }
 .hero-bottom {
-  max-width: 610px;
+  max-width: 500px;
   margin-top: 45px;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 .hero-bottom > p {
-  max-width: 290px;
+  max-width: 430px;
   margin: 0;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .hero-actions {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 12px;
 }
 .hero-art {
   min-height: 480px;

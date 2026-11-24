@@ -19,13 +19,6 @@
   .hero-art {
     min-height: 390px;
   }
-  .hero-bottom {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  .hero-actions {
-    margin-top: 4px;
-  }
   .intro-statement, .about-story-grid {
     padding-left: 8%;
   }

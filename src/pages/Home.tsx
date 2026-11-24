@@ -21,9 +21,7 @@ function Home() {
           <div className="hero-bottom">
             <p>Designing thoughtful digital products and experiences, grounded in how people actually live and work.</p>
             <div className="hero-actions">
-              <MaterialRouteAction className="hero-material-action" to="/work">
-                Explore work
-              </MaterialRouteAction>
+              <Link className="button button-outline" to="/work">Explore Work</Link>
               <Link className="button button-outline" to="/about">A little about me</Link>
             </div>
           </div>
