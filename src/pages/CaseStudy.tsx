@@ -3,6 +3,10 @@ import CaseStudyTemplate from '../components/CaseStudyTemplate';
 import { portfolioProjects, videographyProject } from '../data/projects';
 
 function getCategoryName(slug: string, category?: 'academic' | 'client') {
+  if (slug === videographyProject.slug) {
+    return 'Interactive Media Videography';
+  }
+
   if (category === 'academic' || slug.startsWith('academic')) {
     return 'Academic & Personal Work';
   }
