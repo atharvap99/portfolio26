@@ -5,8 +5,6 @@ import SectionHeading from '../components/SectionHeading';
 import Testimonials from '../components/Testimonials';
 import { MaterialRouteAction } from '../components/MaterialMedia';
 import MovingImageProjectCard from '../components/MovingImageProjectCard';
-import ProjectCard from '../components/ProjectCard';
-import { portfolioProjects } from '../data/projects';
 
 function Home() {
   return (
@@ -68,17 +66,12 @@ function Home() {
       </section>
 
       <section className="work-preview page-shell">
-        <SectionHeading index="02" label="Selected work" note="Products, objects & moving image" />
+        <SectionHeading index="02" label="Selected work" note="Film & reflection" />
         <div className="home-featured-project">
           <MovingImageProjectCard />
         </div>
-        <div className="portfolio-project-grid home-project-grid">
-          {portfolioProjects.map((project, index) => (
-            <ProjectCard project={project} number={'0' + (index + 2)} key={project.slug} />
-          ))}
-        </div>
         <div className="work-preview-footer">
-          <span>FIVE SELECTED PROJECTS</span>
+          <span>FEATURED PROJECT</span>
           <Link className="text-link" to="/work">
             View all work <span aria-hidden="true">↗</span>
           </Link>
