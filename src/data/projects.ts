@@ -129,6 +129,7 @@ export const videographyProject = {
   reflectionTitle: 'Perfume Advertisement Cinematography',
   description: 'A perfume advertisement film, accompanied by a personal reflection on the cinematography and shooting approach.',
   video: 'projects/interactive-media-videography/cheetah-perfume.mp4',
+  poster: 'projects/interactive-media-videography/perfume-advertisement-poster.png',
   reflection: 'projects/interactive-media-videography/personal-reflection-blog.pdf',
   coverPreview: 'projects/interactive-media-videography/reflection-cover-1.jpg',
 };

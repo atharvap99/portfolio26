@@ -116,7 +116,13 @@ function MediaProjectSection({
           </MaterialAction>
         </div>
 
-        <video className="project-film" controls playsInline preload="metadata">
+        <video
+          className="project-film"
+          controls
+          playsInline
+          preload="metadata"
+          poster={mediaBase + project.poster}
+        >
           <source src={mediaBase + project.video} type="video/mp4" />
           Your browser does not support video playback.
         </video>
