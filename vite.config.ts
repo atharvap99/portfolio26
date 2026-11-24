@@ -5,4 +5,22 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   base: '/portfolio26',
+  build: {
+    // Keep the built files easy to recognize and inspect in VS Code.
+    minify: false,
+    cssMinify: false,
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/portfolio.js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: (asset) => {
+          if (asset.name?.endsWith('.css')) {
+            return 'assets/portfolio.css'
+          }
+
+          return 'assets/[name]-[hash][extname]'
+        },
+      },
+    },
+  },
 })
