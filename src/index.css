@@ -52,6 +52,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  text-wrap: balance;
+}
 img {
   display: block;
   max-width: 100%;

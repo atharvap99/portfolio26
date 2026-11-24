@@ -122,16 +122,13 @@ function Testimonials() {
         className="testimonial-rail"
         role="region"
         tabIndex={0}
-        aria-label="Testimonials. Hover to slow the ticker; focus it to pause."
+        aria-label="Testimonials from collaborators"
       >
         <div ref={trackRef} className="testimonial-track">
           <TestimonialCards />
           <TestimonialCards duplicate />
         </div>
       </div>
-      <p className="testimonial-scroll-hint" aria-hidden="true">
-        AUTO-SCROLL · HOVER TO SLOW · FOCUS TO PAUSE <span>→</span>
-      </p>
     </section>
   );
 }

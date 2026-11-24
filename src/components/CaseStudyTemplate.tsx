@@ -2,7 +2,6 @@ import './CaseStudyTemplate.css';
 
 import { Link } from 'react-router-dom';
 import type { PortfolioProject, videographyProject } from '../data/projects';
-import DoubleDiamond from './DoubleDiamond';
 import {
   MaterialAction,
   MaterialCard,
@@ -81,8 +80,6 @@ function CaseStudyTemplate({
 
       {project && <ProjectNotes project={project} />}
       {isTemplate && <TemplateContext />}
-
-      {mediaProject && <DoubleDiamond />}
 
       {isTemplate && <TemplateExploration />}
 
