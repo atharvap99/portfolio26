@@ -82,7 +82,7 @@ function CaseStudyTemplate({
       {project && <ProjectNotes project={project} />}
       {isTemplate && <TemplateContext />}
 
-      <DoubleDiamond />
+      {mediaProject && <DoubleDiamond />}
 
       {isTemplate && <TemplateExploration />}
 

@@ -4,7 +4,9 @@ import designerDoodle from '../assets/designer-doodle.png';
 import SectionHeading from '../components/SectionHeading';
 import Testimonials from '../components/Testimonials';
 import { MaterialRouteAction } from '../components/MaterialMedia';
-import { workCategories } from '../data/work';
+import MovingImageProjectCard from '../components/MovingImageProjectCard';
+import ProjectCard from '../components/ProjectCard';
+import { portfolioProjects } from '../data/projects';
 
 function Home() {
   return (
@@ -66,41 +68,17 @@ function Home() {
       </section>
 
       <section className="work-preview page-shell">
-        <SectionHeading index="02" label="Selected work" note="Two parts of the practice" />
-        <div className="category-grid">
-          <Link className="category-card academic-card" to={workCategories.academic.path}>
-            <div className="category-art art-academic">
-              <span className="art-index">01</span>
-              <span className="art-ring ring-one" />
-              <span className="art-ring ring-two" />
-              <span className="art-cross">+</span>
-              <span className="art-label">STUDY / EXPLORE / MAKE</span>
-            </div>
-            <div className="category-meta">
-              <div>
-                <p>ACADEMIC & PERSONAL</p>
-                <h3>Questions worth<br />following.</h3>
-              </div>
-              <span className="arrow-circle" aria-hidden="true">↗</span>
-            </div>
-          </Link>
-          <Link className="category-card client-card" to={workCategories.client.path}>
-            <div className="category-art art-client">
-              <span className="art-index">02</span>
-              <span className="art-panel" />
-              <span className="art-label">PARTNER / DESIGN / DELIVER</span>
-            </div>
-            <div className="category-meta">
-              <div>
-                <p>CONTRACT & CLIENT</p>
-                <h3>Work made<br />together.</h3>
-              </div>
-              <span className="arrow-circle" aria-hidden="true">↗</span>
-            </div>
-          </Link>
+        <SectionHeading index="02" label="Selected work" note="Products, objects & moving image" />
+        <div className="home-featured-project">
+          <MovingImageProjectCard />
+        </div>
+        <div className="portfolio-project-grid home-project-grid">
+          {portfolioProjects.map((project, index) => (
+            <ProjectCard project={project} number={'0' + (index + 2)} key={project.slug} />
+          ))}
         </div>
         <div className="work-preview-footer">
-          <span>PROJECT ARCHIVE / IN PROGRESS</span>
+          <span>FIVE SELECTED PROJECTS</span>
           <Link className="text-link" to="/work">
             View all work <span aria-hidden="true">↗</span>
           </Link>

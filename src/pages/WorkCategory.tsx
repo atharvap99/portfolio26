@@ -34,7 +34,11 @@ function WorkCategory({
         <p className="page-deck">{description}</p>
       </header>
       <section className="category-content">
-        <SectionHeading index="01" label="Project archive" note="A growing collection" />
+        <SectionHeading
+          index="01"
+          label="Projects in this category"
+          note={showMovingImage ? `${projects.length} case studies and 1 film` : `${projects.length} case studies`}
+        />
         {projects.length ? (
           <>
             <div className="portfolio-project-grid">
