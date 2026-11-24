@@ -1,3 +1,4 @@
+import './Photography.css';
 import SectionHeading from '../components/SectionHeading';
 import mountainValley from '../assets/place-mountain-valley.jpg';
 import monastery from '../assets/place-monastery.jpg';
@@ -62,9 +63,15 @@ function Photography() {
     <div className="page-shell photography-page">
       <header className="page-intro photo-intro">
         <p className="eyebrow">PHOTOGRAPHY / 07</p>
-        <h1>Looking<br /><span>closer.</span></h1>
+        <h1>
+          Looking<br />
+          <span>closer.</span>
+        </h1>
         <p className="page-deck">A set of visual studies in landscape, architecture, and light. The images below are generated placeholders, not personal photographs.</p>
-        <div className="photo-intro-foot"><span>PLACE / LIGHT / STRUCTURE</span><span>GENERATED IMAGE PLACEHOLDERS ↓</span></div>
+        <div className="photo-intro-foot">
+          <span>PLACE / LIGHT / STRUCTURE</span>
+          <span>GENERATED IMAGE PLACEHOLDERS ↓</span>
+        </div>
       </header>
       <section className="photo-archive">
         <SectionHeading index="01" label="Visual archive" note="One grid / six studies + a video slot" />
@@ -73,8 +80,15 @@ function Photography() {
             <figure className={study.className} key={study.number}>
               {study.image ? (
                 <>
-                  <img src={study.image} alt={study.label} loading="lazy" />
-                  <figcaption><span>{study.number}</span><span>{study.caption}</span></figcaption>
+                  <img
+                    src={study.image}
+                    alt={study.label}
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <span>{study.number}</span>
+                    <span>{study.caption}</span>
+                  </figcaption>
                 </>
               ) : (
                 <>
@@ -82,7 +96,10 @@ function Photography() {
                     <span className="photo-video-kicker">VIDEO / 02:04</span>
                     <span className="photo-video-play" aria-hidden="true">▶</span>
                   </div>
-                  <figcaption><span>{study.number}</span><span>124-second film placeholder</span></figcaption>
+                  <figcaption>
+                    <span>{study.number}</span>
+                    <span>124-second film placeholder</span>
+                  </figcaption>
                 </>
               )}
             </figure>

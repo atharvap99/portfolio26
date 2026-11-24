@@ -1,0 +1,116 @@
+/* I keep the project cards light, using the images from my original portfolio. */
+.portfolio-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 34px);
+  margin-top: 24px;
+}
+.portfolio-project-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fffdf8;
+  box-shadow: 0 1px 3px rgba(26,29,34,.08);
+  transition: box-shadow .22s ease, background-color .22s ease;
+}
+.portfolio-project-card:hover {
+  background: #fff;
+  box-shadow: 0 8px 26px rgba(26,29,34,.1);
+}
+.portfolio-project-card:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+.portfolio-project-card:active {
+  background: var(--paper-deep);
+}
+.portfolio-project-image {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.72;
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper-deep);
+}
+.portfolio-project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform .35s ease;
+}
+.portfolio-project-card:hover .portfolio-project-image img {
+  transform: scale(1.025);
+}
+.portfolio-project-number {
+  position: absolute;
+  top: 13px;
+  left: 14px;
+  display: grid;
+  place-items: center;
+  min-width: 35px;
+  height: 35px;
+  padding: 0 8px;
+  border-radius: 50px;
+  background: #fffdf8;
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+}
+.portfolio-project-copy {
+  padding: 23px 24px 20px;
+}
+.portfolio-project-client {
+  margin: 0 0 8px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+.portfolio-project-copy h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(28px, 3.8vw, 43px);
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+.portfolio-project-description {
+  max-width: 470px;
+  min-height: 52px;
+  margin: 13px 0 21px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.portfolio-project-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(35,38,40,.1);
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+.portfolio-project-foot .material-icon {
+  color: var(--blue);
+}
+@media (max-width: 760px) {
+  .portfolio-project-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .portfolio-project-copy {
+    padding: 19px 18px 17px;
+  }
+  .portfolio-project-description {
+    min-height: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-project-card, .portfolio-project-image img {
+    transition: none;
+  }
+}

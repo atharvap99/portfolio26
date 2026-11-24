@@ -7,11 +7,16 @@ function TestimonialCards({ duplicate = false }: { duplicate?: boolean }) {
     <div className="testimonial-group" aria-hidden={duplicate || undefined}>
       {testimonials.map((testimonial, index) => (
         <figure className="testimonial-card" key={testimonial.name}>
-          <div className="testimonial-card-top"><span>0{index + 1}</span><span aria-hidden="true">“</span></div>
+          <div className="testimonial-card-top">
+            <span>0{index + 1}</span>
+            <span aria-hidden="true">“</span>
+          </div>
           <blockquote>{testimonial.quote}</blockquote>
           <figcaption>
             <strong>{testimonial.name}</strong>
-            <span>{testimonial.role} · {testimonial.organization}</span>
+            <span>
+              {testimonial.role} · {testimonial.organization}
+            </span>
           </figcaption>
         </figure>
       ))}
@@ -72,9 +77,18 @@ function Testimonials() {
     };
 
     const handleMotionPreference = () => reducedMotion.matches ? stop() : start();
-    const handlePointerEnter = () => { pointerInside = true; };
-    const handlePointerLeave = () => { pointerInside = false; };
-    const handleFocusIn = () => { focused = true; };
+    const handlePointerEnter = () => {
+      pointerInside = true;
+    };
+
+    const handlePointerLeave = () => {
+      pointerInside = false;
+    };
+
+    const handleFocusIn = () => {
+      focused = true;
+    };
+
     const handleFocusOut = (event: FocusEvent) => {
       focused = rail.contains(event.relatedTarget as Node | null);
     };
@@ -103,13 +117,21 @@ function Testimonials() {
   return (
     <section className="testimonials page-shell" aria-label="Testimonials">
       <SectionHeading index="03" label="In their words" note="A few notes from people I’ve worked with" />
-      <div ref={railRef} className="testimonial-rail" role="region" tabIndex={0} aria-label="Testimonials. Hover to slow the ticker; focus it to pause.">
+      <div
+        ref={railRef}
+        className="testimonial-rail"
+        role="region"
+        tabIndex={0}
+        aria-label="Testimonials. Hover to slow the ticker; focus it to pause."
+      >
         <div ref={trackRef} className="testimonial-track">
           <TestimonialCards />
           <TestimonialCards duplicate />
         </div>
       </div>
-      <p className="testimonial-scroll-hint" aria-hidden="true">AUTO-SCROLL · HOVER TO SLOW · FOCUS TO PAUSE <span>→</span></p>
+      <p className="testimonial-scroll-hint" aria-hidden="true">
+        AUTO-SCROLL · HOVER TO SLOW · FOCUS TO PAUSE <span>→</span>
+      </p>
     </section>
   );
 }

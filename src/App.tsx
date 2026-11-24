@@ -7,6 +7,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import './App.css';
+import './Responsive.css';
 import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
 import About from './pages/About';
@@ -32,7 +33,10 @@ function NotFound() {
   return (
     <section className="not-found page-shell">
       <p className="eyebrow">404 / PAGE NOT FOUND</p>
-      <h1>Lost in<br /><span>the margins.</span></h1>
+      <h1>
+        Lost in<br />
+        <span>the margins.</span>
+      </h1>
       <Link className="button button-orange" to="/">Back to home ↗</Link>
     </section>
   );
@@ -52,6 +56,7 @@ function App() {
             <Route path="/work" element={<Work />} />
             <Route path="/work/academic" element={<AcademicWork />} />
             <Route path="/work/client" element={<ClientWork />} />
+            {/* All case studies share the same layout. */}
             <Route path="/case-study/:slug" element={<CaseStudy />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

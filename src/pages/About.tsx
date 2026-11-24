@@ -1,11 +1,21 @@
 import designerDoodle from '../assets/designer-doodle.png';
 import SectionHeading from '../components/SectionHeading';
+import './About.css';
 import { Link } from 'react-router-dom';
 
 const skillGroups = [
-  { title: 'UX / PRODUCT', skills: ['UX Design', 'Product Design', 'Interaction Design', 'User Research', 'Prototyping'] },
-  { title: 'VISUAL', skills: ['UI Design', 'Visual Design', 'Design Systems', 'Typography', 'Branding'] },
-  { title: 'TOOLS', skills: ['Figma', 'Framer', 'Adobe', 'AI Design Tools'] },
+  {
+    title: 'UX / PRODUCT',
+    skills: ['UX Design', 'Product Design', 'Interaction Design', 'User Research', 'Prototyping'],
+  },
+  {
+    title: 'VISUAL',
+    skills: ['UI Design', 'Visual Design', 'Design Systems', 'Typography', 'Branding'],
+  },
+  {
+    title: 'TOOLS',
+    skills: ['Figma', 'Framer', 'Adobe', 'AI Design Tools'],
+  },
 ];
 
 const experiences = [
@@ -40,18 +50,29 @@ function About() {
     <div className="page-shell about-page">
       <header className="page-intro">
         <p className="eyebrow">A LITTLE ABOUT ME / 05</p>
-        <h1>Designer,<br /><span>problem solver.</span></h1>
+        <h1>
+          Designer,<br />
+          <span>problem solver.</span>
+        </h1>
         <p className="page-deck">I enjoy understanding people, technology, and the systems that connect them.</p>
       </header>
       <section className="about-story">
         <SectionHeading index="01" label="My story" note="From objects to interfaces" />
         <div className="about-story-grid">
-          <figure className="about-portrait"><img src={designerDoodle} alt="Hand-drawn designer illustration with product and interface sketches" /><figcaption>INDUSTRIAL DESIGN / DIGITAL PRODUCTS</figcaption></figure>
+          <figure className="about-portrait">
+            <img
+              src={designerDoodle}
+              alt="Hand-drawn designer illustration with product and interface sketches"
+            />
+            <figcaption>INDUSTRIAL DESIGN / DIGITAL PRODUCTS</figcaption>
+          </figure>
           <div className="about-prose">
             <p className="prose-lead">Industrial design gave me a whole-system perspective. I now bring it to UX and digital product design.</p>
             <p>I work across product thinking, research, interaction design, and visual design—connecting an interface to the experience around it.</p>
             <p>I enjoy working on complex problems and transforming them into simple, useful, and engaging experiences.</p>
-            <Link className="text-link" to="/contact">Start a conversation <span>↗</span></Link>
+            <Link className="text-link" to="/contact">
+              Start a conversation <span aria-hidden="true">↗</span>
+            </Link>
           </div>
         </div>
       </section>
@@ -61,7 +82,11 @@ function About() {
           {experiences.map((experience, index) => (
             <article className="experience-row" key={experience.company}>
               <span className="experience-date">{experience.years}</span>
-              <div><h2>{experience.company}</h2><p>{experience.role}</p><small>{experience.detail}</small></div>
+              <div>
+                <h2>{experience.company}</h2>
+                <p>{experience.role}</p>
+                <small>{experience.detail}</small>
+              </div>
               <span className="experience-index">0{index + 1}</span>
             </article>
           ))}
@@ -69,7 +94,17 @@ function About() {
       </section>
       <section className="about-skills">
         <SectionHeading index="03" label="Capabilities" note="Tools and ways of thinking" />
-        <div className="skills-grid">{skillGroups.map((group, i) => <div className="skill-column" key={group.title}><span className="skill-index">0{i + 1}</span><h3>{group.title}</h3><ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul></div>)}</div>
+        <div className="skills-grid">
+          {skillGroups.map((group, index) => (
+            <div className="skill-column" key={group.title}>
+              <span className="skill-index">0{index + 1}</span>
+              <h3>{group.title}</h3>
+              <ul>
+                {group.skills.map((skill) => <li key={skill}>{skill}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

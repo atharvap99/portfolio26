@@ -1,4 +1,6 @@
-import { NavLink, Link } from 'react-router-dom';
+import './SiteHeader.css';
+import { Link, NavLink } from 'react-router-dom';
+import { MaterialRouteAction } from './MaterialMedia';
 
 const navItems = [
   { to: '/work', label: 'Work' },
@@ -19,15 +21,17 @@ function SiteHeader() {
             <NavLink
               key={item.to}
               to={item.to}
-              className={({ isActive }) => (isActive ? 'navigation-link is-active' : 'navigation-link')}
+              className={({ isActive }) =>
+                isActive ? 'navigation-link is-active' : 'navigation-link'
+              }
             >
               {item.label}
             </NavLink>
           ))}
         </div>
-        <Link className="nav-availability" to="/contact">
-          Let’s talk <span aria-hidden="true">↗</span>
-        </Link>
+        <MaterialRouteAction className="nav-availability" to="/contact" variant="outlined">
+          Let’s talk
+        </MaterialRouteAction>
       </nav>
     </header>
   );

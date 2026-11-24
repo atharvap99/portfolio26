@@ -19,8 +19,8 @@ function DoubleDiamond() {
       </div>
       <div className="diamond-panel">
         <div className="diamond-graphic" aria-hidden="true">
-          <div className="diamond-shape diamond-one"><span /></div>
-          <div className="diamond-shape diamond-two"><span /></div>
+          <div className="diamond-shape diamond-one" />
+          <div className="diamond-shape diamond-two" />
           <div className="diamond-axis" />
           <span className="diamond-pole pole-left">OPEN</span>
           <span className="diamond-pole pole-middle">FRAME</span>
@@ -30,7 +30,10 @@ function DoubleDiamond() {
           {phases.map((phase) => (
             <li className={'phase phase-' + phase.kind} key={phase.number}>
               <span className="phase-number">{phase.number}</span>
-              <div><strong>{phase.title}</strong><span>{phase.note}</span></div>
+              <div>
+                <strong>{phase.title}</strong>
+                <span>{phase.note}</span>
+              </div>
             </li>
           ))}
         </ol>
