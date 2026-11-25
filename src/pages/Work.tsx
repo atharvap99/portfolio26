@@ -10,7 +10,7 @@ function Work() {
       <header className="page-intro">
         <p className="eyebrow">PORTFOLIO / 02</p>
         <h1>Selected<br /><span>work.</span></h1>
-        <p className="page-deck">A selection of projects across digital product, industrial design, and moving image.</p>
+        <p className="page-deck">A selection spanning talent platforms, market research, and moving image.</p>
       </header>
 
       <section className="moving-image-project">
@@ -19,7 +19,7 @@ function Work() {
       </section>
 
       <section className="existing-projects">
-        <SectionHeading index="02" label="Selected case studies" note="Product, industrial & digital design" />
+        <SectionHeading index="02" label="Case studies" note="Talent platforms & market research" />
         <div className="portfolio-project-grid work-project-grid">
           {portfolioProjects.map((project, index) => (
             <ProjectCard

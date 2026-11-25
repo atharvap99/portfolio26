@@ -78,7 +78,7 @@ function CaseStudyTemplate({
 
       {isTemplate && <VideoPlaceholder />}
 
-      {project && <ProjectNotes project={project} />}
+      {project && <ProjectNotes project={project} mediaBase={mediaBase} />}
       {isTemplate && <TemplateContext />}
 
       {isTemplate && <TemplateExploration />}
@@ -168,10 +168,16 @@ function VideoPlaceholder() {
   );
 }
 
-function ProjectNotes({ project }: { project: PortfolioProject }) {
+function ProjectNotes({
+  project,
+  mediaBase,
+}: {
+  project: PortfolioProject;
+  mediaBase: string;
+}) {
   return (
     <section className="case-study-details">
-      <SectionHeading index="02" label="Project notes" note="From the original portfolio" />
+      <SectionHeading index="02" label="Project story" note="Research, decisions & visuals" />
       {project.sections.map((section, index) => (
         <article className="case-detail-row" key={section.title}>
           <span className="case-detail-index">0{index + 1}</span>
@@ -182,6 +188,20 @@ function ProjectNotes({ project }: { project: PortfolioProject }) {
               <ul>
                 {section.points.map((point) => <li key={point}>{point}</li>)}
               </ul>
+            )}
+            {section.visuals && (
+              <div className="case-note-visuals">
+                {section.visuals.map((visual) => (
+                  <figure key={visual.image}>
+                    <img
+                      src={mediaBase + visual.image}
+                      alt={visual.alt}
+                      loading="lazy"
+                    />
+                    <figcaption>{visual.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
             )}
           </div>
         </article>
