@@ -41,7 +41,7 @@ const experiences = [
     detail: 'Global Ambassador · Content Creation',
   },
   {
-    years: 'DEC 2025 — MAY 2026',
+    years: '2025 — 2026',
     company: 'Freelance',
     role: 'Freelance Designer',
     detail: 'Independent practice',
