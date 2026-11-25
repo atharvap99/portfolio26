@@ -12,10 +12,6 @@
   padding: 18px 0 54px;
 }
 
-.page-intro > .eyebrow {
-  margin-bottom: 28px;
-}
-
 .page-intro h1 {
   max-width: 11ch;
   margin: 0;
@@ -39,7 +35,6 @@
 .eyebrow,
 .section-index,
 .section-note,
-.case-kicker,
 .diagram-caption,
 .archive-caption,
 .archive-placeholder,
@@ -49,7 +44,6 @@
 .footer-meta,
 .experience-date,
 .experience-index,
-.skill-index,
 .video-corner,
 .case-image-placeholder,
 .photo-frame figcaption {

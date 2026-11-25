@@ -30,8 +30,6 @@ function WorkCategory({
           ← All work
         </Link>
 
-        <p className="eyebrow">{index} / WORK</p>
-
         <h1>
           {title}
           <span className="orange-period">.</span>

@@ -122,8 +122,6 @@ function Photography() {
   return (
     <div className="page-shell photography-page">
       <header className="page-intro photo-intro">
-        <p className="eyebrow">PHOTOGRAPHY / 14</p>
-
         <h1>
           Looking
           <br />

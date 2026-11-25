@@ -120,23 +120,17 @@
 /* Arrange the skill groups in three columns. */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 25px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 40px);
   padding-top: 25px;
 }
 
 .skill-column {
-  position: relative;
-  border-top: 1px solid var(--line);
-  padding-top: 15px;
-}
-
-.skill-index {
-  color: var(--orange);
+  min-width: 0;
 }
 
 .skill-column h3 {
-  margin: 13px 0;
+  margin: 0 0 14px;
   font-size: 10px;
   letter-spacing: .14em;
 }
@@ -149,4 +143,11 @@
   list-style: none;
   color: var(--muted);
   font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }

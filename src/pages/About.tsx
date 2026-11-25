@@ -65,8 +65,6 @@ function About() {
   return (
     <div className="page-shell about-page">
       <header className="page-intro">
-        <p className="eyebrow">A LITTLE ABOUT ME / 05</p>
-
         <h1>
           Designer,
           <br />
@@ -153,9 +151,8 @@ function About() {
         />
 
         <div className="skills-grid">
-          {skillGroups.map((group, i) => (
+          {skillGroups.map((group) => (
             <div className="skill-column" key={group.title}>
-              <span className="skill-index">0{i + 1}</span>
               <h3>{group.title}</h3>
 
               <ul>

@@ -6,8 +6,6 @@ function Contact() {
   return (
     <div className="page-shell contact-page">
       <header className="page-intro contact-intro">
-        <p className="eyebrow">LET’S CONNECT / 06</p>
-
         <h1>
           Good work
           <br />

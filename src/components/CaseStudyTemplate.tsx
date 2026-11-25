@@ -10,13 +10,11 @@ import {
 import SectionHeading from './SectionHeading';
 
 type CaseStudyTemplateProps = {
-  category: string;
   project?: PortfolioProject;
   mediaProject?: typeof videographyProject;
 };
 
 function CaseStudyTemplate({
-  category,
   project,
   mediaProject,
 }: CaseStudyTemplateProps) {
@@ -59,16 +57,7 @@ function CaseStudyTemplate({
             ← Back to work
           </Link>
 
-          <span className="case-kicker">
-            {mediaProject
-              ? 'FILM / REFLECTION'
-              : project
-                ? 'PROJECT / CASE STUDY'
-                : 'CASE STUDY / TEMPLATE'}
-          </span>
         </div>
-
-        <p className="eyebrow">{category.toUpperCase()}</p>
 
         <h1>
           {title}
