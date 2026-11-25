@@ -179,6 +179,14 @@ function ProjectFullPage({
         fetchPriority="high"
         decoding="async"
       />
+      {project.endingNote && (
+        <figcaption className="case-study-contact-note">
+          <p>{project.endingNote}</p>
+          <Link to="/contact">
+            Let’s talk <span aria-hidden="true">↗</span>
+          </Link>
+        </figcaption>
+      )}
     </figure>
   );
 }
