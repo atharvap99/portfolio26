@@ -8,24 +8,40 @@
 /* Place the portrait and introduction side by side. */
 .about-story-grid {
   display: grid;
-  grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
-  gap: clamp(42px, 7vw, 104px);
-  padding: 38px clamp(0px, 5vw, 72px) 0;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 600px);
+  justify-content: center;
+  gap: clamp(48px, 7vw, 96px);
+  padding: 38px 0 0;
   align-items: center;
+}
+
+.about-page .page-intro h1 {
+  max-width: 14ch;
 }
 
 .about-portrait {
   width: 100%;
-  max-width: 360px;
+  max-width: 380px;
   margin: 0;
 }
 
 .about-portrait img {
   display: block;
   width: 100%;
-  max-height: 470px;
-  aspect-ratio: 4 / 5;
+  height: min(470px, 45vw);
   object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .about-page .about-story-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding: 30px clamp(0px, 8vw, 72px) 0;
+  }
+
+  .about-page .about-portrait {
+    justify-self: center;
+  }
 }
 
 .about-portrait figcaption {

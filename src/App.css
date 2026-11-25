@@ -7,21 +7,31 @@
   margin-inline: auto;
 }
 
-/* Give each page title some space below the navigation. */
+/* Keep page openings close to the navigation, like the earlier layout. */
 .page-intro {
-  padding: clamp(56px, 7vw, 88px) 0 64px;
+  padding: 18px 0 54px;
+}
+
+.page-intro > .eyebrow {
+  margin-bottom: 28px;
 }
 
 .page-intro h1 {
-  max-width: 12ch;
-  font-size: clamp(58px, 8vw, 112px);
+  max-width: 11ch;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(72px, 10.8vw, 158px);
+  font-weight: 700;
+  line-height: .9;
+  letter-spacing: -.055em;
+  text-wrap: balance;
 }
 
 .page-deck {
-  max-width: 620px;
-  margin: 22px 0 0;
+  max-width: 820px;
+  margin: 36px 0 0;
   color: var(--muted);
-  font-size: clamp(16px, 1.8vw, 21px);
+  font-size: clamp(17px, 2vw, 22px);
   line-height: 1.5;
 }
 

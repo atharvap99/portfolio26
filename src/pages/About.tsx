@@ -1,3 +1,5 @@
+import './About.css';
+
 import designerDoodle from '../assets/designer-doodle.png';
 import SectionHeading from '../components/SectionHeading';
 import { Link } from 'react-router-dom';
@@ -63,6 +65,8 @@ function About() {
   return (
     <div className="page-shell about-page">
       <header className="page-intro">
+        <p className="eyebrow">A LITTLE ABOUT ME / 05</p>
+
         <h1>
           Designer,
           <br />
