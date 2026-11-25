@@ -4,7 +4,11 @@ import { portfolioProjects } from '../data/projects';
 
 function AcademicWork() {
   const category = workCategories.academic;
-  const projects = portfolioProjects.filter((project) => project.category === 'academic');
+
+  // Show only projects marked as academic.
+  const projects = portfolioProjects.filter(
+    (project) => project.category === 'academic',
+  );
 
   return (
     <WorkCategory

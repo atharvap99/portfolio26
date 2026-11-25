@@ -2,12 +2,14 @@
 .work-index {
   padding: 34px 0 65px;
 }
+
 .work-index-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
   padding-top: 24px;
 }
+
 .work-index-card {
   min-height: 300px;
   position: relative;
@@ -20,24 +22,30 @@
   background: var(--blue);
   transition: background .25s ease;
 }
+
 .work-index-card:hover {
   background: var(--ink);
 }
+
 .work-index-card.index-card-1 {
   color: var(--ink);
   background: var(--orange);
 }
+
 .work-index-card.index-card-1:hover {
   background: var(--paper-deep);
 }
+
 .index-card-number {
   font-size: 12px;
   font-weight: 700;
 }
+
 .work-index-card .eyebrow {
   color: currentColor;
   opacity: .7;
 }
+
 .work-index-card h2 {
   max-width: 420px;
   margin: 12px 0;
@@ -46,6 +54,7 @@
   line-height: .93;
   letter-spacing: -.065em;
 }
+
 .work-index-card div > p:last-child {
   max-width: 370px;
   margin: 14px 0 0;
@@ -53,6 +62,7 @@
   line-height: 1.5;
   opacity: .78;
 }
+
 .index-card-arrow {
   position: absolute;
   right: 24px;
@@ -60,9 +70,12 @@
   font-size: 22px;
   transition: transform .2s ease;
 }
+
 .work-index-card:hover .index-card-arrow {
   transform: translate(4px,-4px);
 }
+
+/* Add a short note beside the template marker. */
 .template-note {
   display: flex;
   gap: 13px;
@@ -70,6 +83,7 @@
   border-top: 1px solid var(--line);
   padding: 17px 0 55px;
 }
+
 .note-mark {
   display: grid;
   flex: 0 0 auto;
@@ -82,19 +96,23 @@
   font-family: var(--display);
   font-size: 13px;
 }
+
 .template-note p {
   margin: 0;
   color: var(--muted);
   font-size: 12px;
   line-height: 1.5;
 }
+
 .existing-projects {
   padding: 16px 0 48px;
 }
+
 .existing-project-list {
   margin-top: 16px;
   border-bottom: 1px solid var(--line);
 }
+
 .existing-project-row {
   display: grid;
   grid-template-columns: 52px 1fr minmax(190px, .7fr) 24px;
@@ -104,36 +122,44 @@
   border-top: 1px solid var(--line);
   transition: padding .2s ease, color .2s ease;
 }
+
 .existing-project-row:hover {
   padding-inline: 8px;
   color: var(--blue);
 }
-.existing-project-number, .existing-project-discipline {
+
+.existing-project-number,
+.existing-project-discipline {
   color: var(--muted);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: .12em;
 }
+
 .existing-project-row h2 {
   margin: 0;
   font-family: var(--display);
   font-size: clamp(24px, 3vw, 36px);
   letter-spacing: -.05em;
 }
+
 .existing-project-arrow {
   justify-self: end;
   color: var(--orange);
   font-size: 17px;
 }
+
 .category-content {
   padding: 35px 0 90px;
 }
+
 .archive-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 25px;
   border: 1px solid var(--line);
 }
+
 .archive-visual {
   aspect-ratio: 1.35;
   position: relative;
@@ -145,6 +171,7 @@
   background: var(--blue);
   color: var(--paper);
 }
+
 .archive-visual::before {
   content: '';
   position: absolute;
@@ -156,6 +183,7 @@
   border-bottom: 1px solid rgba(244,241,233,.4);
   transform: skewY(-18deg);
 }
+
 .archive-visual::after {
   content: '';
   position: absolute;
@@ -167,11 +195,13 @@
   border-bottom: 1px solid rgba(244,241,233,.4);
   transform: skewY(18deg);
 }
+
 .archive-number {
   position: absolute;
   top: 16px;
   left: 17px;
 }
+
 .archive-cross {
   position: absolute;
   top: 42%;
@@ -181,10 +211,12 @@
   font-size: 44px;
   font-weight: 200;
 }
+
 .archive-caption {
   position: relative;
   z-index: 1;
 }
+
 .archive-details {
   display: flex;
   flex-direction: column;
@@ -193,9 +225,11 @@
   gap: 30px;
   padding: clamp(22px, 4vw, 50px);
 }
+
 .archive-details .eyebrow {
   color: var(--orange);
 }
+
 .archive-details h2 {
   margin: 16px 0 8px;
   font-family: var(--display);
@@ -203,36 +237,46 @@
   line-height: .9;
   letter-spacing: -.07em;
 }
+
 .archive-placeholder {
   max-width: 260px;
   color: var(--muted);
   font-weight: 400;
   letter-spacing: .01em;
 }
+
 /* These cards replace the earlier draft project rows. */
 .existing-projects {
   padding-top: 18px;
 }
+
 .work-project-grid {
   padding-top: 0;
   margin-top: 24px;
 }
+
 .selected-case-studies {
   padding: 12px 0 48px;
 }
+
 .moving-image-project {
   padding: 12px 0 48px;
 }
+
 .category-moving-image {
   margin-top: 52px;
 }
+
 .category-moving-image > .eyebrow {
   margin-bottom: 12px;
 }
+
+/* Show one project card per row on smaller screens. */
 @media (max-width: 760px) {
   .portfolio-project-grid {
     grid-template-columns: 1fr;
   }
+
   .selected-case-studies {
     padding-bottom: 34px;
   }

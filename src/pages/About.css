@@ -1,7 +1,11 @@
 /* About */
-.about-story, .about-experience, .about-skills {
+.about-story,
+.about-experience,
+.about-skills {
   padding: 35px 0 78px;
 }
+
+/* Place the portrait and introduction side by side. */
 .about-story-grid {
   display: grid;
   grid-template-columns: minmax(260px, .86fr) minmax(0, 1.14fr);
@@ -9,15 +13,18 @@
   padding: 46px 8% 0;
   align-items: center;
 }
+
 .about-portrait {
   max-width: 450px;
   margin: 0;
 }
+
 .about-portrait img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: contain;
 }
+
 .about-portrait figcaption {
   padding: 13px 0 0;
   color: var(--muted);
@@ -26,9 +33,11 @@
   letter-spacing: .12em;
   text-align: center;
 }
+
 .about-prose {
   padding-top: 6px;
 }
+
 .about-prose p {
   max-width: 570px;
   margin: 0 0 20px;
@@ -36,6 +45,7 @@
   font-size: 15px;
   line-height: 1.7;
 }
+
 .about-prose .prose-lead {
   color: var(--ink);
   font-family: var(--display);
@@ -43,12 +53,16 @@
   line-height: 1.05;
   letter-spacing: -.04em;
 }
+
 .about-prose .text-link {
   margin-top: 10px;
 }
+
+/* List work experience in rows. */
 .experience-list {
   padding-top: 22px;
 }
+
 .experience-row {
   display: grid;
   grid-template-columns: 1fr 2fr 45px;
@@ -57,45 +71,57 @@
   padding: 22px 0;
   border-bottom: 1px solid var(--line);
 }
-.experience-date, .experience-index {
+
+.experience-date,
+.experience-index {
   color: var(--muted);
 }
+
 .experience-row h2 {
   margin: -6px 0 5px;
   font-family: var(--display);
   font-size: 31px;
   letter-spacing: -.04em;
 }
+
 .experience-row p {
   margin: 0 0 3px;
   font-size: 14px;
 }
+
 .experience-row small {
   color: var(--muted);
   font-size: 11px;
 }
+
 .experience-index {
   justify-self: end;
 }
+
+/* Arrange the skill groups in three columns. */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 25px;
   padding-top: 25px;
 }
+
 .skill-column {
   position: relative;
   border-top: 1px solid var(--line);
   padding-top: 15px;
 }
+
 .skill-index {
   color: var(--orange);
 }
+
 .skill-column h3 {
   margin: 13px 0;
   font-size: 10px;
   letter-spacing: .14em;
 }
+
 .skill-column ul {
   display: grid;
   gap: 7px;

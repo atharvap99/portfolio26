@@ -1,24 +1,31 @@
+/* Arrange the thumbnail, details, and link in one row. */
 .moving-image-card {
   display: grid;
-  grid-template-columns: minmax(140px, .32fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(140px, 0.32fr) minmax(0, 1fr) auto;
   align-items: center;
   gap: 24px;
   margin-top: 17px;
   padding: 24px;
   border-radius: 22px;
   background: var(--paper-deep);
-  transition: background-color .2s ease;
+  transition: background-color 0.2s ease;
 }
+
+/* Give the card a small color change when people interact with it. */
 .moving-image-card:hover {
   background: #eae5da;
 }
+
 .moving-image-card:focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 4px;
 }
+
 .moving-image-card:active {
   background: #e2dccf;
 }
+
+/* Keep the preview wide and crop the image to fill it. */
 .moving-image-thumbnail {
   position: relative;
   display: grid;
@@ -28,11 +35,14 @@
   border-radius: 14px;
   background: #111014;
 }
+
 .moving-image-thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
+/* Place the play symbol in the centre of the thumbnail. */
 .moving-image-play {
   position: absolute;
   display: grid;
@@ -42,35 +52,43 @@
   border-radius: 50%;
   background: var(--paper);
   color: var(--blue);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
-  transition: transform .2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
 }
+
 .moving-image-card:hover .moving-image-play {
   transform: scale(1.08);
 }
+
 .moving-image-play .material-icon {
   width: 20px;
   height: 20px;
 }
+
+/* Space the title and supporting text apart. */
 .moving-image-copy {
   display: grid;
   gap: 8px;
 }
+
 .moving-image-copy .eyebrow {
   color: var(--blue);
 }
+
 .moving-image-copy strong {
   font-family: var(--display);
   font-size: clamp(22px, 3vw, 34px);
   line-height: 1;
-  letter-spacing: -.045em;
+  letter-spacing: -0.045em;
 }
+
 .moving-image-copy > span:last-child {
   max-width: 680px;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.55;
 }
+
 .moving-image-link {
   display: inline-flex;
   align-items: center;
@@ -80,19 +98,24 @@
   font-weight: 700;
   white-space: nowrap;
 }
+
 .moving-image-link .material-icon {
   width: 18px;
   height: 18px;
 }
+
+/* Reflow the card for smaller screens. */
 @media (max-width: 760px) {
   .moving-image-card {
-    grid-template-columns: minmax(92px, .45fr) minmax(0, 1fr);
+    grid-template-columns: minmax(92px, 0.45fr) minmax(0, 1fr);
     gap: 15px;
     padding: 19px;
   }
+
   .moving-image-thumbnail {
     border-radius: 12px;
   }
+
   .moving-image-link {
     grid-column: 2;
   }

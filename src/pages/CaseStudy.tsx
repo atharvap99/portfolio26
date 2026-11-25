@@ -1,8 +1,15 @@
 import { useParams } from 'react-router-dom';
-import CaseStudyTemplate from '../components/CaseStudyTemplate';
-import { portfolioProjects, videographyProject } from '../data/projects';
 
-function getCategoryName(slug: string, category?: 'academic' | 'client') {
+import CaseStudyTemplate from '../components/CaseStudyTemplate';
+import {
+  portfolioProjects,
+  videographyProject,
+} from '../data/projects';
+
+function getCategoryName(
+  slug: string,
+  category?: 'academic' | 'client',
+) {
   if (slug === videographyProject.slug) {
     return 'Interactive Media Videography';
   }
@@ -19,10 +26,18 @@ function getCategoryName(slug: string, category?: 'academic' | 'client') {
 }
 
 function CaseStudy() {
+  // Read the project name from the current page address.
   const { slug = '' } = useParams();
+
   const project = portfolioProjects.find((item) => item.slug === slug);
-  const mediaProject = videographyProject.slug === slug ? videographyProject : undefined;
-  const category = getCategoryName(slug, project?.category ?? mediaProject?.category);
+
+  const mediaProject =
+    videographyProject.slug === slug ? videographyProject : undefined;
+
+  const category = getCategoryName(
+    slug,
+    project?.category ?? mediaProject?.category,
+  );
 
   return (
     <CaseStudyTemplate

@@ -1,20 +1,26 @@
-/* Contact and not found */
+/* Contact and not found pages */
+
 .contact-page {
   min-height: 70vh;
 }
+
 .contact-intro {
   border: 0;
   padding-bottom: 58px;
 }
+
+/* Style the contact details against the blue background. */
 .contact-card {
   margin: 0 0 90px;
   padding: 28px;
   color: var(--paper);
   background: var(--blue);
 }
+
 .contact-card .eyebrow {
   color: var(--orange);
 }
+
 .contact-address {
   display: inline-flex;
   align-items: center;
@@ -27,11 +33,13 @@
   letter-spacing: -.06em;
   overflow-wrap: anywhere;
 }
+
 .contact-address span {
   color: var(--orange);
   font-family: Arial, sans-serif;
   font-size: .5em;
 }
+
 .contact-lower {
   display: flex;
   justify-content: space-between;
@@ -40,6 +48,7 @@
   border-top: 1px solid rgba(244,241,233,.33);
   padding-top: 19px;
 }
+
 .contact-lower p {
   max-width: 330px;
   margin: 0;
@@ -47,9 +56,12 @@
   font-size: 13px;
   line-height: 1.5;
 }
+
 .contact-lower .text-link {
   color: var(--paper);
 }
+
+/* Center the message on pages that cannot be found. */
 .not-found {
   min-height: 60vh;
   display: flex;
@@ -59,9 +71,11 @@
   gap: 35px;
   padding-block: 70px;
 }
+
 .not-found h1 {
   font-size: clamp(72px, 11vw, 130px);
 }
+
 .not-found h1 span {
   color: var(--blue);
 }

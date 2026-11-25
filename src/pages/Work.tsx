@@ -1,4 +1,5 @@
 import './Work.css';
+
 import SectionHeading from '../components/SectionHeading';
 import ProjectCard from '../components/ProjectCard';
 import MovingImageProjectCard from '../components/MovingImageProjectCard';
@@ -9,14 +10,30 @@ function Work() {
     <div className="page-shell work-page">
       <header className="page-intro">
         <p className="eyebrow">PORTFOLIO / 02</p>
-        <h1>Selected<br /><span>work.</span></h1>
-        <p className="page-deck">Three projects across moving image, talent platforms, and market research.</p>
+
+        <h1>
+          Selected
+          <br />
+          <span>work.</span>
+        </h1>
+
+        <p className="page-deck">
+          Three projects across moving image, talent platforms, and market
+          research.
+        </p>
       </header>
 
       <section className="selected-case-studies">
-        <SectionHeading index="01" label="Case studies" note="Film · talent platforms · market research" />
+        <SectionHeading
+          index="01"
+          label="Case studies"
+          note="Film · talent platforms · market research"
+        />
+
         <MovingImageProjectCard />
+
         <div className="portfolio-project-grid work-project-grid">
+          {/* Create one card for each project in the list. */}
           {portfolioProjects.map((project, index) => (
             <ProjectCard
               project={project}

@@ -1,7 +1,7 @@
 import './MaterialMedia.css';
 
-import { useNavigate } from 'react-router-dom';
 import type { ReactNode } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import '@material/web/button/filled-button.js';
 import '@material/web/button/outlined-button.js';
@@ -16,15 +16,18 @@ export type MaterialIconName =
   | 'school'
   | 'work';
 
-export function MaterialIcon({
-  name,
-  slot,
-}: {
+type MaterialIconProps = {
   name: MaterialIconName;
   slot?: string;
-}) {
+};
+
+export function MaterialIcon({ name, slot }: MaterialIconProps) {
   return (
-    <md-icon aria-hidden="true" className="material-icon" slot={slot}>
+    <md-icon
+      aria-hidden="true"
+      className="material-icon"
+      slot={slot}
+    >
       {name}
     </md-icon>
   );
@@ -33,31 +36,41 @@ export function MaterialIcon({
 type MaterialCardProps = {
   children: ReactNode;
   className?: string;
-};
-
-// Material Web does not ship a card component, so this uses its surface and shape tokens.
-export function MaterialCard({ children, className = '' }: MaterialCardProps) {
-  return <section className={`material-card ${className}`}>{children}</section>;
 }
 
-type MaterialLabelProps = {
+// Material Web does not include a card here, so this section uses our card styles.
+export function MaterialCard({
+  children,
+  className = '',
+}: MaterialCardProps) {
+  return (
+    <section className={`material-card ${className}`}>
+      {children}
+    </section>
+  );
+}
+
+type MaterialChipProps = {
   children: ReactNode;
   icon: MaterialIconName;
-};
+}
 
-export function MaterialChip({ children, icon }: MaterialLabelProps) {
+export function MaterialChip({ children, icon }: MaterialChipProps) {
   return (
-    <md-assist-chip className="material-chip" aria-label={String(children)}>
+    <md-assist-chip
+      aria-label={String(children)}
+      className="material-chip"
+    >
       <MaterialIcon name={icon} slot="icon" />
       {children}
     </md-assist-chip>
   );
 }
 
-type MaterialActionProps = MaterialLabelProps & {
+type MaterialActionProps = MaterialChipProps & {
   href: string;
   variant?: 'filled' | 'outlined';
-};
+}
 
 export function MaterialAction({
   href,
@@ -65,10 +78,16 @@ export function MaterialAction({
   icon,
   variant = 'filled',
 }: MaterialActionProps) {
-  const Button = variant === 'outlined' ? 'md-outlined-button' : 'md-filled-button';
+  const Button =
+    variant === 'outlined' ? 'md-outlined-button' : 'md-filled-button';
 
   return (
-    <Button className="material-action" href={href} target="_blank" rel="noreferrer">
+    <Button
+      className="material-action"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
       <MaterialIcon name={icon} slot="icon" />
       {children}
     </Button>
@@ -81,7 +100,7 @@ type MaterialRouteActionProps = {
   icon?: MaterialIconName;
   variant?: 'filled' | 'outlined';
   className?: string;
-};
+}
 
 export function MaterialRouteAction({
   to,
@@ -91,12 +110,18 @@ export function MaterialRouteAction({
   className = '',
 }: MaterialRouteActionProps) {
   const navigate = useNavigate();
-  const Button = variant === 'outlined' ? 'md-outlined-button' : 'md-filled-button';
+  const Button =
+    variant === 'outlined' ? 'md-outlined-button' : 'md-filled-button';
+
+  // Use the app's router for links that stay within the portfolio.
+  function handleClick() {
+    navigate(to);
+  }
 
   return (
     <Button
       className={`material-route-action ${className}`}
-      onClick={() => navigate(to)}
+      onClick={handleClick}
       type="button"
     >
       <MaterialIcon name={icon} slot="icon" />

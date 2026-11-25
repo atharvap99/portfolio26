@@ -1,21 +1,26 @@
-/* Footer */
+/* Add space around the footer and a line to separate it from the page. */
 .site-footer {
   padding: 58px 5vw 20px;
   border-top: 1px solid var(--line);
 }
+
+/* Keep the contact message centred and within the page width. */
 .footer-lead {
   width: min(1440px, 100%);
   margin: auto;
-  padding: 0 0 76px;
+  padding-bottom: 76px;
 }
+
 .footer-lead h2 {
   max-width: 800px;
   margin: 20px 0 24px;
   font-family: var(--display);
   font-size: clamp(43px, 7vw, 87px);
-  line-height: .9;
-  letter-spacing: -.07em;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
 }
+
+/* Style the email like a clear link people can click. */
 .footer-email {
   display: inline-flex;
   align-items: center;
@@ -24,57 +29,67 @@
   border-bottom: 1px solid var(--ink);
   font-size: clamp(16px, 2.3vw, 25px);
   font-weight: 700;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
 }
+
 .footer-email span {
   color: var(--orange);
 }
+
+/* Arrange the footer details in three areas. */
 .footer-meta {
-  width: min(1440px, 100%);
-  margin: auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 18px;
-  border-top: 1px solid var(--line);
+  width: min(1440px, 100%);
+  margin: auto;
   padding-top: 16px;
+  border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 }
+
 .footer-mark {
   color: var(--ink);
   font-size: 18px;
 }
+
 .footer-credit {
   display: inline-flex;
-  justify-self: center;
   align-items: center;
+  justify-self: center;
   gap: 5px;
   white-space: nowrap;
 }
+
 .footer-heart {
   width: 14px;
   height: 14px;
   fill: #8058bd;
 }
+
 .footer-meta-right {
   display: flex;
-  justify-self: end;
   align-items: center;
+  justify-self: end;
   gap: 16px;
   white-space: nowrap;
 }
+
 .footer-divider {
   width: 1px;
   height: 15px;
   background: var(--line);
 }
+
 .footer-socials {
   display: flex;
   gap: 17px;
 }
+
 .footer-socials a:hover {
   color: var(--orange);
 }

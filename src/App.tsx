@@ -6,6 +6,7 @@ import {
   Routes,
   useLocation,
 } from 'react-router-dom';
+
 import './App.css';
 import './Responsive.css';
 import SiteFooter from './components/SiteFooter';
@@ -22,6 +23,7 @@ import Work from './pages/Work';
 function ScrollToTop() {
   const { pathname } = useLocation();
 
+  // Start each new page at the top.
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
@@ -33,37 +35,48 @@ function NotFound() {
   return (
     <section className="not-found page-shell">
       <p className="eyebrow">404 / PAGE NOT FOUND</p>
+
       <h1>
-        Lost in<br />
+        Lost in
+        <br />
         <span>the margins.</span>
       </h1>
-      <Link className="button button-orange" to="/">Back to home ↗</Link>
+
+      <Link className="button button-orange" to="/">
+        Back to home ↗
+      </Link>
     </section>
   );
 }
 
 function App() {
+  // Use the site's base path so the routes work when hosted in a subfolder.
   const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   return (
     <BrowserRouter basename={basename}>
       <ScrollToTop />
+
       <div className="site">
         <SiteHeader />
+
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/academic" element={<AcademicWork />} />
             <Route path="/work/client" element={<ClientWork />} />
+
             {/* All case studies share the same layout. */}
             <Route path="/case-study/:slug" element={<CaseStudy />} />
+
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/photography" element={<Photography />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+
         <SiteFooter />
       </div>
     </BrowserRouter>

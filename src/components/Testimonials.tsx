@@ -2,7 +2,11 @@ import { useEffect, useRef } from 'react';
 import SectionHeading from './SectionHeading';
 import { testimonials } from '../data/testimonials';
 
-function TestimonialCards({ duplicate = false }: { duplicate?: boolean }) {
+type TestimonialCardsProps = {
+  duplicate?: boolean;
+};
+
+function TestimonialCards({ duplicate = false }: TestimonialCardsProps) {
   return (
     <div className="testimonial-group" aria-hidden={duplicate || undefined}>
       {testimonials.map((testimonial, index) => (
@@ -11,7 +15,9 @@ function TestimonialCards({ duplicate = false }: { duplicate?: boolean }) {
             <span>0{index + 1}</span>
             <span aria-hidden="true">“</span>
           </div>
+
           <blockquote>{testimonial.quote}</blockquote>
+
           <figcaption>
             <strong>{testimonial.name}</strong>
             <span>
@@ -35,6 +41,7 @@ function Testimonials() {
 
     if (!rail || !track || !firstGroup) return;
 
+    // Pause when visitors prefer less motion, hover the cards, or use the keyboard.
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let groupWidth = firstGroup.getBoundingClientRect().width;
     let offset = 0;
@@ -51,14 +58,19 @@ function Testimonials() {
       const targetSpeed = focused ? 0 : pointerInside ? 12 : 28;
       const easing = 1 - Math.exp(-delta / 0.55);
       speed += (targetSpeed - speed) * easing;
-      if (groupWidth > 0) offset = (offset + speed * delta) % groupWidth;
-      track.style.transform = `translate3d(${-offset}px, 0, 0)`;
 
+      if (groupWidth > 0) {
+        offset = (offset + speed * delta) % groupWidth;
+      }
+
+      track.style.transform = `translate3d(${-offset}px, 0, 0)`;
       frameId = window.requestAnimationFrame(tick);
     };
 
     const start = () => {
-      if (!reducedMotion.matches && !frameId) frameId = window.requestAnimationFrame(tick);
+      if (!reducedMotion.matches && !frameId) {
+        frameId = window.requestAnimationFrame(tick);
+      }
     };
 
     const stop = () => {
@@ -71,12 +83,20 @@ function Testimonials() {
     const updateWidth = () => {
       const nextWidth = firstGroup.getBoundingClientRect().width;
       if (!nextWidth || !groupWidth) return;
+
       offset = (offset / groupWidth) * nextWidth;
       groupWidth = nextWidth;
       offset %= groupWidth;
     };
 
-    const handleMotionPreference = () => reducedMotion.matches ? stop() : start();
+    const handleMotionPreference = () => {
+      if (reducedMotion.matches) {
+        stop();
+      } else {
+        start();
+      }
+    };
+
     const handlePointerEnter = () => {
       pointerInside = true;
     };
@@ -116,7 +136,12 @@ function Testimonials() {
 
   return (
     <section className="testimonials page-shell" aria-label="Testimonials">
-      <SectionHeading index="03" label="In their words" note="A few notes from people I’ve worked with" />
+      <SectionHeading
+        index="03"
+        label="In their words"
+        note="A few notes from people I’ve worked with"
+      />
+
       <div
         ref={railRef}
         className="testimonial-rail"

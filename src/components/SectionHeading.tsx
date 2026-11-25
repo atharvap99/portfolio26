@@ -7,7 +7,11 @@ type SectionHeadingProps = {
 function SectionHeading({ index, label, note }: SectionHeadingProps) {
   return (
     <div className="section-heading">
-      <p className="section-index"><span>{index}</span> / {label}</p>
+      <p className="section-index">
+        <span>{index}</span> / {label}
+      </p>
+
+      {/* Show the note only when one is provided. */}
       {note && <p className="section-note">{note}</p>}
     </div>
   );

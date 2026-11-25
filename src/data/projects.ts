@@ -15,7 +15,7 @@ export type PortfolioProject = {
   endingNote?: string;
 };
 
-// I keep the two supplied PDF studies as single continuous page views.
+// Each study uses one long image to show its full page.
 export const portfolioProjects: PortfolioProject[] = [
   {
     slug: 'participant-portal',
@@ -23,7 +23,8 @@ export const portfolioProjects: PortfolioProject[] = [
     discipline: 'PRODUCT DESIGN · UX',
     category: 'client',
     organization: 'Korn Ferry · Assess',
-    description: 'A talent dashboard that brings assessments, learning, coaching, and feedback into one place.',
+    description:
+      'A talent dashboard that brings assessments, learning, coaching, and feedback into one place.',
     cover: 'projects/case-studies/participant-portal/participant-portal-dashboard.png',
     fullPage: {
       image: 'projects/case-studies/participant-portal/participant-portal-case-study-clean.jpg',
@@ -38,7 +39,8 @@ export const portfolioProjects: PortfolioProject[] = [
     discipline: 'DIGITAL PRODUCT · UX/UI',
     category: 'academic',
     organization: 'Market research platform concept',
-    description: 'A market research platform concept for finding, reviewing, and purchasing industry reports.',
+    description:
+      'A market research platform concept for finding, reviewing, and purchasing industry reports.',
     cover: 'projects/case-studies/reportseek/reportseek-laptop.png',
     fullPage: {
       image: 'projects/case-studies/reportseek/full-page-with-contact-note.jpg',
@@ -50,13 +52,15 @@ export const portfolioProjects: PortfolioProject[] = [
   },
 ];
 
+// Keep the video and reflection files together as one project.
 export const videographyProject = {
   slug: 'interactive-media-videography',
   title: 'Videography Project',
   category: 'academic' as const,
   discipline: 'INTERACTIVE MEDIA · VIDEOGRAPHY',
   reflectionTitle: 'Perfume Advertisement Cinematography',
-  description: 'A perfume advertisement film, accompanied by a personal reflection on the cinematography and shooting approach.',
+  description:
+    'A perfume advertisement film, accompanied by a personal reflection on the cinematography and shooting approach.',
   video: 'projects/interactive-media-videography/cheetah-perfume.mp4',
   poster: 'projects/interactive-media-videography/perfume-advertisement-poster.png',
   reflection: 'projects/interactive-media-videography/personal-reflection-blog.pdf',

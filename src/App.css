@@ -1,24 +1,43 @@
 .site {
   overflow: clip;
 }
+
 .page-shell {
   width: min(1440px, 100% - 10vw);
   margin-inline: auto;
 }
-.eyebrow, .section-index, .section-note, .case-kicker, .diagram-caption,
-.archive-caption, .archive-placeholder, .art-label, .photo-intro-foot,
-.hero-bottomline, .footer-meta, .experience-date, .experience-index,
-.skill-index, .video-corner, .case-image-placeholder, .photo-frame figcaption,
+
+/* Share the same small-label style across the page. */
+.eyebrow,
+.section-index,
+.section-note,
+.case-kicker,
+.diagram-caption,
+.archive-caption,
+.archive-placeholder,
+.art-label,
+.photo-intro-foot,
+.hero-bottomline,
+.footer-meta,
+.experience-date,
+.experience-index,
+.skill-index,
+.video-corner,
+.case-image-placeholder,
+.photo-frame figcaption,
 .work-preview-footer {
   font-size: 10px;
   line-height: 1.4;
   letter-spacing: .13em;
   font-weight: 700;
 }
+
 .eyebrow {
   margin: 0;
   color: var(--muted);
 }
+
+/* Keep section labels and notes at opposite ends of the row. */
 .section-heading {
   display: flex;
   align-items: center;
@@ -27,13 +46,16 @@
   border-top: 1px solid var(--line);
   padding-top: 13px;
 }
+
 .section-index {
   margin: 0;
   color: var(--muted);
 }
+
 .section-index span {
   color: var(--orange);
 }
+
 .section-note {
   margin: 0;
   color: var(--muted);
@@ -41,6 +63,8 @@
   letter-spacing: .04em;
   text-align: right;
 }
+
+/* Style text links and buttons consistently. */
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -52,10 +76,12 @@
   font-weight: 700;
   transition: color .2s ease, gap .2s ease;
 }
+
 .text-link:hover {
   color: var(--orange);
   gap: 17px;
 }
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -67,40 +93,54 @@
   font-weight: 700;
   transition: transform .18s ease, background .2s ease, color .2s ease;
 }
+
 .button:hover {
   transform: translateY(-1px);
 }
-.button:active, .text-link:active {
+
+.button:active,
+.text-link:active {
   transform: scale(.98);
 }
+
 .button-orange {
   background: var(--orange);
   color: var(--ink);
 }
+
 .button-orange:hover {
   background: var(--ink);
   color: var(--paper);
 }
+
 .button-outline {
   border: 1px solid var(--line);
 }
+
 .button-outline:hover {
   border-color: var(--ink);
 }
+
 .button-blue {
   background: var(--blue);
   color: var(--paper);
 }
+
 .button-blue:hover {
   background: var(--orange);
   color: var(--ink);
 }
+
 /* I added a small press state so links and buttons respond to a click. */
-.navigation-link:focus-visible, .wordmark:focus-visible, .button:focus-visible,
-.text-link:focus-visible, .footer-socials a:focus-visible {
+.navigation-link:focus-visible,
+.wordmark:focus-visible,
+.button:focus-visible,
+.text-link:focus-visible,
+.footer-socials a:focus-visible {
   outline: 2px solid var(--orange);
   outline-offset: 4px;
 }
+
 .back-link {
   display: inline-block;
   margin-bottom: 39px;
@@ -108,6 +148,7 @@
   font-size: 12px;
   transition: color .2s ease;
 }
+
 .back-link:hover {
   color: var(--orange);
 }

@@ -1,58 +1,73 @@
-/* Shared navigation */
+/* Keep the navigation visible while scrolling. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
-  border-bottom: 1px solid rgba(27,28,25,.16);
-  background: rgba(244,241,233,.94);
+  border-bottom: 1px solid rgba(27, 28, 25, 0.16);
+  background: rgba(244, 241, 233, 0.94);
   backdrop-filter: blur(14px);
 }
+
 .navigation {
-  min-height: 72px;
-  width: min(1600px, 100% - 10vw);
-  margin: auto;
   display: grid;
   grid-template-columns: 1fr auto auto;
-  column-gap: clamp(20px, 3vw, 42px);
   align-items: center;
+  column-gap: clamp(20px, 3vw, 42px);
+  width: min(1600px, 100% - 10vw);
+  min-height: 72px;
+  margin: auto;
 }
-.wordmark, .footer-mark {
+
+/* Use the same style for the site name in the header and footer. */
+.wordmark,
+.footer-mark {
   width: fit-content;
-  font-weight: 900;
   font-size: 22px;
-  letter-spacing: -.1em;
+  font-weight: 900;
+  letter-spacing: -0.1em;
 }
-.wordmark span, .footer-mark span {
+
+.wordmark span,
+.footer-mark span {
   color: var(--orange);
 }
+
 .navigation-links {
-  justify-self: end;
   display: flex;
-  gap: clamp(18px, 3vw, 42px);
   align-items: center;
+  justify-self: end;
+  gap: clamp(18px, 3vw, 42px);
 }
+
 .navigation-link {
   position: relative;
   color: #66665f;
   font-size: 13px;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
+
+/* Show a small orange line under hovered and active links. */
 .navigation-link::after {
   position: absolute;
-  content: '';
-  left: 0;
   right: 100%;
   bottom: -7px;
+  left: 0;
   height: 2px;
   background: var(--orange);
-  transition: right .2s ease;
+  content: '';
+  transition: right 0.2s ease;
 }
-.navigation-link:hover, .navigation-link.is-active {
+
+.navigation-link:hover,
+.navigation-link.is-active {
   color: var(--ink);
 }
-.navigation-link:hover::after, .navigation-link.is-active::after {
+
+.navigation-link:hover::after,
+.navigation-link.is-active::after {
   right: 0;
 }
+
 .nav-availability {
   justify-self: end;
   min-height: 44px;

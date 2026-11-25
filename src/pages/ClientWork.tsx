@@ -1,10 +1,15 @@
 import WorkCategory from './WorkCategory';
+
 import { workCategories } from '../data/work';
 import { portfolioProjects } from '../data/projects';
 
 function ClientWork() {
   const category = workCategories.client;
-  const projects = portfolioProjects.filter((project) => project.category === 'client');
+
+  // Show only projects marked as client work.
+  const projects = portfolioProjects.filter(
+    (project) => project.category === 'client',
+  );
 
   return (
     <WorkCategory
