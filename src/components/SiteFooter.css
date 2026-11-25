@@ -87,9 +87,39 @@
 
 .footer-socials {
   display: flex;
-  gap: 17px;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-socials a {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  transition: transform .2s ease;
+}
+
+.footer-socials svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.footer-socials a:first-child svg {
+  fill: #0a66c2;
 }
 
 .footer-socials a:hover {
-  color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.footer-socials a:first-child:hover svg {
+  fill: var(--orange);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-socials a {
+    transition: none;
+  }
 }
