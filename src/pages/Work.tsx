@@ -10,16 +10,12 @@ function Work() {
       <header className="page-intro">
         <p className="eyebrow">PORTFOLIO / 02</p>
         <h1>Selected<br /><span>work.</span></h1>
-        <p className="page-deck">A selection spanning talent platforms, market research, and moving image.</p>
+        <p className="page-deck">Three projects across moving image, talent platforms, and market research.</p>
       </header>
 
-      <section className="moving-image-project">
-        <SectionHeading index="01" label="Videography Project" note="Film & reflection" />
+      <section className="selected-case-studies">
+        <SectionHeading index="01" label="Case studies" note="Film · talent platforms · market research" />
         <MovingImageProjectCard />
-      </section>
-
-      <section className="existing-projects">
-        <SectionHeading index="02" label="Case studies" note="Talent platforms & market research" />
         <div className="portfolio-project-grid work-project-grid">
           {portfolioProjects.map((project, index) => (
             <ProjectCard

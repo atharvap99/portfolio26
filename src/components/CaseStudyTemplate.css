@@ -2,6 +2,9 @@
 .case-hero {
   padding: 44px 0 70px;
 }
+.case-hero-pdf {
+  padding-bottom: 28px;
+}
 .case-hero-top {
   display: flex;
   justify-content: space-between;
@@ -46,16 +49,14 @@
 .case-facts {
   grid-template-columns: repeat(2, minmax(120px, 1fr));
 }
-.case-study-visual {
-  margin: 8px 0 55px;
-  overflow: hidden;
-  border-radius: 8px;
-  background: var(--paper-deep);
+.case-study-full-page {
+  margin: 0 0 55px;
+  background: #fff;
 }
-.case-study-visual img {
+.case-study-full-page img {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
+  height: auto;
 }
 .case-media-section {
   display: grid;
@@ -107,31 +108,6 @@
   gap: 8px;
   margin: 16px 0 0;
   padding-left: 20px;
-}
-.case-note-visuals {
-  display: grid;
-  gap: 18px;
-  margin-top: 24px;
-}
-.case-note-visuals figure {
-  margin: 0;
-  overflow: hidden;
-  border: 1px solid rgba(35,38,40,.08);
-  border-radius: 12px;
-  background: #fffdf8;
-}
-.case-note-visuals img {
-  display: block;
-  width: 100%;
-  max-height: 780px;
-  object-fit: contain;
-  background: var(--paper-deep);
-}
-.case-note-visuals figcaption {
-  padding: 12px 15px;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.5;
 }
 .video-placeholder {
   min-height: 310px;
@@ -400,17 +376,10 @@
   .case-detail-row > div {
     grid-column: 2;
   }
-  .case-study-visual {
+  .case-study-full-page {
     margin-bottom: 34px;
   }
   .case-media-section {
     padding-bottom: 34px;
-  }
-  .case-note-visuals {
-    gap: 12px;
-    margin-top: 18px;
-  }
-  .case-note-visuals img {
-    max-height: 560px;
   }
 }

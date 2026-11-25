@@ -214,10 +214,14 @@
   padding-top: 18px;
 }
 .work-project-grid {
-  padding-top: 25px;
+  padding-top: 0;
+  margin-top: 24px;
+}
+.selected-case-studies {
+  padding: 12px 0 48px;
 }
 .moving-image-project {
-  padding: 12px 0 100px;
+  padding: 12px 0 48px;
 }
 .category-moving-image {
   margin-top: 52px;
@@ -229,7 +233,7 @@
   .portfolio-project-grid {
     grid-template-columns: 1fr;
   }
-  .moving-image-project {
-    padding-bottom: 70px;
+  .selected-case-studies {
+    padding-bottom: 34px;
   }
 }

@@ -35,7 +35,7 @@ function CaseStudyTemplate({
 
   return (
     <article className="case-study page-shell">
-      <header className="case-hero">
+      <header className={`case-hero${project ? ' case-hero-pdf' : ''}`}>
         <div className="case-hero-top">
           <Link className="back-link" to="/work">← Back to work</Link>
           <span className="case-kicker">
@@ -63,13 +63,7 @@ function CaseStudyTemplate({
       </header>
 
       {project && (
-        <figure className="case-study-visual">
-          {/* I use an image from my original portfolio PDF here. */}
-          <img
-            src={mediaBase + project.cover}
-            alt={`Selected project presentation for ${project.title}`}
-          />
-        </figure>
+        <ProjectFullPage project={project} mediaBase={mediaBase} />
       )}
 
       {mediaProject && (
@@ -78,7 +72,6 @@ function CaseStudyTemplate({
 
       {isTemplate && <VideoPlaceholder />}
 
-      {project && <ProjectNotes project={project} mediaBase={mediaBase} />}
       {isTemplate && <TemplateContext />}
 
       {isTemplate && <TemplateExploration />}
@@ -168,7 +161,7 @@ function VideoPlaceholder() {
   );
 }
 
-function ProjectNotes({
+function ProjectFullPage({
   project,
   mediaBase,
 }: {
@@ -176,37 +169,17 @@ function ProjectNotes({
   mediaBase: string;
 }) {
   return (
-    <section className="case-study-details">
-      <SectionHeading index="02" label="Project story" note="Research, decisions & visuals" />
-      {project.sections.map((section, index) => (
-        <article className="case-detail-row" key={section.title}>
-          <span className="case-detail-index">0{index + 1}</span>
-          <h2>{section.title}</h2>
-          <div>
-            <p>{section.body}</p>
-            {section.points && (
-              <ul>
-                {section.points.map((point) => <li key={point}>{point}</li>)}
-              </ul>
-            )}
-            {section.visuals && (
-              <div className="case-note-visuals">
-                {section.visuals.map((visual) => (
-                  <figure key={visual.image}>
-                    <img
-                      src={mediaBase + visual.image}
-                      alt={visual.alt}
-                      loading="lazy"
-                    />
-                    <figcaption>{visual.caption}</figcaption>
-                  </figure>
-                ))}
-              </div>
-            )}
-          </div>
-        </article>
-      ))}
-    </section>
+    <figure className="case-study-full-page">
+      <img
+        src={mediaBase + project.fullPage.image}
+        alt={project.fullPage.alt}
+        width={project.fullPage.width}
+        height={project.fullPage.height}
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+      />
+    </figure>
   );
 }
 
