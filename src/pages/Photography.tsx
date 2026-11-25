@@ -1,90 +1,92 @@
 import './Photography.css';
 import SectionHeading from '../components/SectionHeading';
 
+const photographyAsset = (fileName: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/photography/${fileName}`;
+
 const photographs = [
   {
     number: '01',
     label: 'India Gate illuminated at night',
     caption: 'Delhi / after dark',
-    image: '/photography/india-gate-night.jpg',
+    image: photographyAsset('india-gate-night.jpg'),
   },
   {
     number: '02',
     label: 'Modern architecture in warm evening light',
     caption: 'Architecture / evening',
-    image: '/photography/modern-architecture.jpg',
+    image: photographyAsset('modern-architecture.jpg'),
   },
   {
     number: '03',
     label: 'A monastery in the Ladakh mountains',
     caption: 'Ladakh / monastery',
-    image: '/photography/ladakh-monastery.jpg',
+    image: photographyAsset('ladakh-monastery.jpg'),
   },
   {
     number: '04',
     label: 'Clouds gathering above a mountain summit',
     caption: 'Himalaya / weather',
-    image: '/photography/mountain-clouds.jpg',
+    image: photographyAsset('mountain-clouds.jpg'),
   },
   {
     number: '05',
     label: 'Qutub Minar against the sky',
     caption: 'Delhi / monument',
-    image: '/photography/qutub-minar.jpg',
+    image: photographyAsset('qutub-minar.jpg'),
   },
   {
     number: '06',
     label: 'The Taj Mahal framed by its gardens',
     caption: 'Agra / symmetry',
-    image: '/photography/taj-mahal.jpg',
+    image: photographyAsset('taj-mahal.jpg'),
   },
   {
     number: '07',
     label: 'Indian flags set against a Himalayan range',
     caption: 'Himalaya / high pass',
-    image: '/photography/himalayan-flags.jpg',
+    image: photographyAsset('himalayan-flags.jpg'),
   },
   {
     number: '08',
     label: 'A touring motorcycle on a high mountain road',
     caption: 'Ladakh / open road',
-    image: '/photography/himalayan-motorcycle.jpg',
+    image: photographyAsset('himalayan-motorcycle.jpg'),
   },
   {
     number: '09',
     label: 'A motorcycle beneath the Himalayan peaks',
     caption: 'Himalaya / crossing',
-    image: '/photography/mountain-crossing.jpg',
+    image: photographyAsset('mountain-crossing.jpg'),
   },
   {
     number: '10',
     label: 'Snow-covered mountains beneath towering clouds',
     caption: 'Himalaya / cloud break',
-    image: '/photography/snowy-valley.jpg',
+    image: photographyAsset('snowy-valley.jpg'),
   },
   {
     number: '11',
     label: 'A lone figure beside a lake at sunset',
     caption: 'Ladakh / last light',
-    image: '/photography/lake-at-sunset.jpg',
+    image: photographyAsset('lake-at-sunset.jpg'),
   },
   {
     number: '12',
     label: 'An illuminated domed building at night',
     caption: 'Architecture / after dark',
-    image: '/photography/dome-at-night.jpg',
+    image: photographyAsset('dome-at-night.jpg'),
   },
   {
     number: '13',
     label: 'A turquoise lake below snow-capped mountains',
     caption: 'Ladakh / alpine lake',
-    image: '/photography/turquoise-lake.jpg',
+    image: photographyAsset('turquoise-lake.jpg'),
   },
   {
     number: '14',
     label: 'Sunlight falling through an autumn forest',
     caption: 'Forest / afternoon light',
-    image: '/photography/autumn-forest.jpg',
+    image: photographyAsset('autumn-forest.jpg'),
   },
 ];
 

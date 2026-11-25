@@ -17,61 +17,38 @@
 }
 .bento-grid {
   display: grid;
+  width: 100%;
+  aspect-ratio: 6 / 5;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-auto-rows: clamp(56px, 6.1vw, 92px);
-  grid-auto-flow: dense;
-  gap: 12px;
+  grid-template-rows: repeat(10, minmax(0, 1fr));
+  gap: clamp(8px, 1vw, 14px);
   margin-top: 24px;
 }
 .photo-frame {
   min-width: 0;
+  min-height: 0;
   position: relative;
   margin: 0;
   overflow: hidden;
   border-radius: 7px;
   background: var(--paper-deep);
-  grid-column: span 3;
-  grid-row: span 3;
 }
-.photo-frame:nth-child(1) {
-  grid-column: span 6;
-  grid-row: span 4;
-}
-.photo-frame:nth-child(2),
-.photo-frame:nth-child(3) {
-  grid-row: span 2;
-}
-.photo-frame:nth-child(4) {
-  grid-column: span 4;
-  grid-row: span 3;
-}
-.photo-frame:nth-child(5) {
-  grid-column: span 2;
-  grid-row: span 3;
-}
-.photo-frame:nth-child(7) {
-  grid-row: span 4;
-}
-.photo-frame:nth-child(8) {
-  grid-column: span 4;
-}
-.photo-frame:nth-child(9) {
-  grid-column: span 2;
-}
-.photo-frame:nth-child(10) {
-  grid-column: span 4;
-}
-.photo-frame:nth-child(12) {
-  grid-column: span 2;
-  grid-row: span 4;
-}
-.photo-frame:nth-child(13) {
-  grid-column: span 6;
-}
-.photo-frame:nth-child(14) {
-  grid-column: span 6;
-}
+.photo-frame:nth-child(1) { grid-area: 1 / 1 / 5 / 7; }
+.photo-frame:nth-child(2) { grid-area: 1 / 7 / 3 / 10; }
+.photo-frame:nth-child(3) { grid-area: 1 / 10 / 3 / 13; }
+.photo-frame:nth-child(4) { grid-area: 3 / 7 / 5 / 10; }
+.photo-frame:nth-child(5) { grid-area: 3 / 10 / 5 / 13; }
+.photo-frame:nth-child(6) { grid-area: 5 / 1 / 7 / 5; }
+.photo-frame:nth-child(7) { grid-area: 5 / 5 / 7 / 9; }
+.photo-frame:nth-child(8) { grid-area: 5 / 9 / 7 / 13; }
+.photo-frame:nth-child(9) { grid-area: 7 / 1 / 9 / 5; }
+.photo-frame:nth-child(10) { grid-area: 7 / 5 / 9 / 9; }
+.photo-frame:nth-child(11) { grid-area: 7 / 9 / 9 / 13; }
+.photo-frame:nth-child(12) { grid-area: 9 / 1 / 11 / 5; }
+.photo-frame:nth-child(13) { grid-area: 9 / 5 / 11 / 9; }
+.photo-frame:nth-child(14) { grid-area: 9 / 9 / 11 / 13; }
 .photo-frame img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -104,25 +81,19 @@
 
 @media (max-width: 900px) {
   .bento-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-auto-rows: clamp(72px, 10vw, 100px);
+    aspect-ratio: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: auto;
     gap: 10px;
   }
-  .photo-frame,
-  .photo-frame:nth-child(4),
-  .photo-frame:nth-child(8),
-  .photo-frame:nth-child(10) {
-    grid-column: span 3;
+  .bento-grid > .photo-frame:nth-child(n) {
+    grid-area: auto;
+    aspect-ratio: 4 / 3;
   }
-  .photo-frame:nth-child(1),
-  .photo-frame:nth-child(13),
-  .photo-frame:nth-child(14) {
-    grid-column: span 6;
-  }
-  .photo-frame:nth-child(5),
-  .photo-frame:nth-child(9),
-  .photo-frame:nth-child(12) {
-    grid-column: span 3;
+  .bento-grid > .photo-frame:nth-child(1) {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 8;
   }
 }
 
@@ -135,46 +106,14 @@
     padding: 22px 0 68px;
   }
   .bento-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: clamp(78px, 23vw, 118px);
     gap: 8px;
     margin-top: 18px;
   }
-  .photo-frame,
-  .photo-frame:nth-child(4),
-  .photo-frame:nth-child(8),
-  .photo-frame:nth-child(10),
-  .photo-frame:nth-child(5),
-  .photo-frame:nth-child(9),
-  .photo-frame:nth-child(12) {
-    grid-column: span 1;
+  .bento-grid > .photo-frame:nth-child(n) {
+    aspect-ratio: 4 / 3;
   }
-  .photo-frame:nth-child(1),
-  .photo-frame:nth-child(13),
-  .photo-frame:nth-child(14) {
-    grid-column: span 2;
-  }
-  .photo-frame:nth-child(1) {
-    grid-row: span 3;
-  }
-  .photo-frame:nth-child(2),
-  .photo-frame:nth-child(3),
-  .photo-frame:nth-child(5),
-  .photo-frame:nth-child(6),
-  .photo-frame:nth-child(9),
-  .photo-frame:nth-child(11) {
-    grid-row: span 2;
-  }
-  .photo-frame:nth-child(4),
-  .photo-frame:nth-child(7),
-  .photo-frame:nth-child(8),
-  .photo-frame:nth-child(10),
-  .photo-frame:nth-child(12) {
-    grid-row: span 3;
-  }
-  .photo-frame:nth-child(13),
-  .photo-frame:nth-child(14) {
-    grid-row: span 2;
+  .bento-grid > .photo-frame:first-child {
+    aspect-ratio: 16 / 9;
   }
   .photo-frame figcaption {
     right: 9px;
