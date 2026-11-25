@@ -11,11 +11,11 @@ export default defineConfig({
     cssMinify: false,
     rollupOptions: {
       output: {
-        entryFileNames: 'assets/portfolio.js',
+        entryFileNames: 'assets/portfolio-[hash].js',
         chunkFileNames: 'assets/[name].js',
         assetFileNames: (asset) => {
           if (asset.name?.endsWith('.css')) {
-            return 'assets/portfolio.css'
+            return 'assets/portfolio-[hash].css'
           }
 
           return 'assets/[name]-[hash][extname]'
