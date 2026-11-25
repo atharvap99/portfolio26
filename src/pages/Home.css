@@ -31,7 +31,6 @@
 }
 
 .hero-copy h1,
-.page-intro h1,
 .case-hero h1,
 .not-found h1 {
   margin: 0;
@@ -200,6 +199,7 @@
 /* Arrange the two work categories side by side. */
 .work-preview {
   border-top: 1px solid var(--line);
+  padding-bottom: 58px;
 }
 
 .category-grid {
@@ -368,25 +368,9 @@
   transform: rotate(45deg);
 }
 
-.work-preview-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  margin-top: 36px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-}
-
-.work-preview-footer .text-link {
-  color: var(--ink);
-  font-size: 12px;
-}
-
-/* Show testimonials in a horizontal scrolling row. */
+/* Keep a balanced gap between selected work and the testimonials. */
 .testimonials {
-  padding: 42px 0 96px;
+  padding: 38px 0 88px;
 }
 
 .testimonial-rail {

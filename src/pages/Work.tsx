@@ -9,8 +9,6 @@ function Work() {
   return (
     <div className="page-shell work-page">
       <header className="page-intro">
-        <p className="eyebrow">PORTFOLIO / 02</p>
-
         <h1>
           Selected
           <br />

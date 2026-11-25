@@ -112,7 +112,6 @@ function PhotoFrame({
       />
 
       <figcaption>
-        <span>{photograph.number}</span>
         <span>{photograph.caption}</span>
       </figcaption>
     </figure>
@@ -123,8 +122,6 @@ function Photography() {
   return (
     <div className="page-shell photography-page">
       <header className="page-intro photo-intro">
-        <p className="eyebrow">PHOTOGRAPHY / 14</p>
-
         <h1>
           Looking
           <br />
@@ -138,7 +135,6 @@ function Photography() {
 
         <div className="photo-intro-foot">
           <span>PLACE / LIGHT / STRUCTURE</span>
-          <span>14 PHOTOGRAPHS ↓</span>
         </div>
       </header>
 
@@ -146,7 +142,7 @@ function Photography() {
         <SectionHeading
           index="01"
           label="Visual archive"
-          note="One grid / fourteen photographs"
+          note="One grid / photographs from India and the Himalaya"
         />
 
         <div className="bento-grid">
@@ -186,18 +182,10 @@ function Photography() {
             className="photo-column-two-main"
           />
 
-          <figure className="photo-frame photo-stat-card">
-            <img
-              src={photographs[6].image}
-              alt={photographs[6].label}
-              loading="lazy"
-            />
-
-            <figcaption>
-              <span>14</span>
-              <span>Photographs / India &amp; Himalaya</span>
-            </figcaption>
-          </figure>
+          <PhotoFrame
+            photograph={photographs[6]}
+            className="photo-column-two-foot"
+          />
 
           <PhotoFrame
             photograph={photographs[7]}
@@ -209,28 +197,17 @@ function Photography() {
             className="photo-column-three-foot"
           />
 
-          <aside className="photo-callout">
-            <p className="photo-callout-kicker">FIELD NOTES / 01</p>
-            <h2>Collected along the way.</h2>
-
-            <div
-              className="photo-callout-portraits"
-              aria-label="More photographs from the collection"
-            >
-              {photographs.slice(9, 13).map((photograph) => (
+          <div className="photo-collage" aria-label="More photographs">
+            {photographs.slice(9, 13).map((photograph) => (
+              <figure className="photo-collage-frame" key={photograph.number}>
                 <img
-                  key={photograph.number}
                   src={photograph.image}
                   alt={photograph.label}
                   loading="lazy"
                 />
-              ))}
-            </div>
-
-            <p className="photo-callout-foot">
-              INDIA / HIMALAYA / ELSEWHERE
-            </p>
-          </aside>
+              </figure>
+            ))}
+          </div>
 
           <PhotoFrame
             photograph={photographs[13]}

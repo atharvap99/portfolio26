@@ -63,8 +63,6 @@ function About() {
   return (
     <div className="page-shell about-page">
       <header className="page-intro">
-        <p className="eyebrow">A LITTLE ABOUT ME / 05</p>
-
         <h1>
           Designer,
           <br />

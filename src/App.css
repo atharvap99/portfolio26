@@ -7,6 +7,24 @@
   margin-inline: auto;
 }
 
+/* Give each page title some space below the navigation. */
+.page-intro {
+  padding: clamp(56px, 7vw, 88px) 0 64px;
+}
+
+.page-intro h1 {
+  max-width: 12ch;
+  font-size: clamp(58px, 8vw, 112px);
+}
+
+.page-deck {
+  max-width: 620px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: clamp(16px, 1.8vw, 21px);
+  line-height: 1.5;
+}
+
 /* Share the same small-label style across the page. */
 .eyebrow,
 .section-index,
@@ -24,8 +42,7 @@
 .skill-index,
 .video-corner,
 .case-image-placeholder,
-.photo-frame figcaption,
-.work-preview-footer {
+.photo-frame figcaption {
   font-size: 10px;
   line-height: 1.4;
   letter-spacing: .13em;

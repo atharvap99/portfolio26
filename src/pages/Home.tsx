@@ -97,7 +97,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Feature a project and link to the full work page. */}
+      {/* Feature a project before moving into the testimonials. */}
       <section className="work-preview page-shell">
         <SectionHeading
           index="02"
@@ -109,12 +109,6 @@ function Home() {
           <MovingImageProjectCard />
         </div>
 
-        <div className="work-preview-footer">
-          <span>FEATURED PROJECT</span>
-          <Link className="text-link" to="/work">
-            View all work <span aria-hidden="true">↗</span>
-          </Link>
-        </div>
       </section>
 
       <Testimonials />

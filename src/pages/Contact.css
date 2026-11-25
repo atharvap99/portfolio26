@@ -61,6 +61,14 @@
   color: var(--paper);
 }
 
+/* Keep the contact button clear against the blue panel. */
+.contact-work-action {
+  --md-outlined-button-outline-color: var(--orange);
+  --md-outlined-button-label-text-color: var(--paper);
+  --md-outlined-button-hover-container-color: var(--orange);
+  --md-outlined-button-hover-label-text-color: var(--ink);
+}
+
 /* Center the message on pages that cannot be found. */
 .not-found {
   min-height: 60vh;

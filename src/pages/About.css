@@ -8,19 +8,22 @@
 /* Place the portrait and introduction side by side. */
 .about-story-grid {
   display: grid;
-  grid-template-columns: minmax(260px, .86fr) minmax(0, 1.14fr);
+  grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
   gap: clamp(42px, 7vw, 104px);
-  padding: 46px 8% 0;
+  padding: 38px clamp(0px, 5vw, 72px) 0;
   align-items: center;
 }
 
 .about-portrait {
-  max-width: 450px;
+  width: 100%;
+  max-width: 360px;
   margin: 0;
 }
 
 .about-portrait img {
+  display: block;
   width: 100%;
+  max-height: 470px;
   aspect-ratio: 4 / 5;
   object-fit: contain;
 }

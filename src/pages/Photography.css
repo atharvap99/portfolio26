@@ -11,10 +11,6 @@
   color: var(--muted);
 }
 
-.photo-intro-foot span:last-child {
-  color: var(--orange);
-}
-
 .photo-archive {
   padding: 35px 0 95px;
 }
@@ -57,7 +53,7 @@
   grid-area: 1 / 2 / 9 / 3;
 }
 
-.photo-stat-card {
+.photo-column-two-foot {
   grid-area: 9 / 2 / 15 / 3;
 }
 
@@ -69,7 +65,7 @@
   grid-area: 5 / 3 / 15 / 4;
 }
 
-.photo-callout {
+.photo-collage {
   grid-area: 1 / 4 / 11 / 5;
 }
 
@@ -137,83 +133,35 @@
   object-fit: cover;
 }
 
-.photo-strip-number {
-  position: absolute;
-  top: 7px;
-  left: 8px;
-  color: var(--paper);
-  font-size: 7px;
-  letter-spacing: .08em;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, .7);
-}
-
-.photo-stat-card::after {
-  inset: 0;
-  background: linear-gradient(0deg, rgba(16, 17, 19, .95), rgba(16, 17, 19, .2));
-}
-
-.photo-stat-card figcaption {
+/* Fill the old note panel with a neat group of photographs. */
+.photo-collage {
   display: grid;
-  justify-content: start;
-  gap: 5px;
-  font-size: 9px;
-}
-
-.photo-stat-card figcaption span:first-child {
-  display: grid;
-  width: clamp(48px, 6vw, 78px);
-  aspect-ratio: 1;
-  place-items: center;
-  margin-bottom: 10px;
-  border: 1px solid rgba(244, 241, 233, .7);
-  border-radius: 50%;
-  font-size: clamp(15px, 2vw, 23px);
-  letter-spacing: 0;
-}
-
-/* Style the dark callout and its circular photos. */
-.photo-callout {
-  display: flex;
   min-width: 0;
-  flex-direction: column;
-  justify-content: space-between;
+  min-height: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: clamp(8px, 1.05vw, 18px);
+}
+
+.photo-collage-frame {
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
   overflow: hidden;
-  padding: clamp(16px, 2vw, 32px);
   border-radius: 8px;
-  background: #17181a;
-  color: var(--paper);
+  background: var(--paper-deep);
 }
 
-.photo-callout-kicker,
-.photo-callout-foot {
-  margin: 0;
-  color: rgba(244, 241, 233, .65);
-  font-size: clamp(7px, .7vw, 10px);
-  font-weight: 700;
-  letter-spacing: .14em;
-}
-
-.photo-callout h2 {
-  max-width: 12ch;
-  margin: 0;
-  font-size: clamp(20px, 2.3vw, 38px);
-  line-height: 1.12;
-}
-
-.photo-callout-portraits {
-  display: flex;
-  justify-content: center;
-  gap: clamp(7px, 1vw, 15px);
-  margin: 12px -10px;
-}
-
-.photo-callout-portraits img {
-  width: clamp(42px, 5.8vw, 86px);
-  aspect-ratio: 1;
-  flex: 0 1 auto;
+.photo-collage-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 2px solid rgba(244, 241, 233, .12);
-  border-radius: 50%;
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+}
+
+.photo-collage-frame:hover img {
+  transform: scale(1.035);
 }
 
 /* Reflow the grid for medium-sized screens. */
@@ -242,19 +190,10 @@
     min-height: clamp(96px, 18vw, 150px);
   }
 
-  .bento-grid > .photo-callout {
+  .bento-grid > .photo-collage {
     grid-area: auto;
     grid-column: 1 / -1;
-    min-height: clamp(230px, 35vw, 340px);
-  }
-
-  .photo-callout h2 {
-    max-width: 18ch;
-    font-size: clamp(24px, 4vw, 38px);
-  }
-
-  .photo-callout-portraits img {
-    width: clamp(58px, 9vw, 86px);
+    aspect-ratio: 4 / 3;
   }
 }
 
@@ -282,12 +221,6 @@
     min-height: 92px;
   }
 
-  .photo-strip-number {
-    top: 5px;
-    left: 6px;
-    font-size: 6px;
-  }
-
   .photo-frame figcaption {
     right: 9px;
     bottom: 9px;
@@ -296,7 +229,11 @@
     font-size: 6px;
   }
 
-  .photo-callout {
-    min-height: 230px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-frame img,
+  .photo-collage-frame img {
+    transition: none;
   }
 }
