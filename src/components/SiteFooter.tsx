@@ -50,7 +50,7 @@ function SiteFooter() {
 
           <div className="footer-socials">
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/atharva-pardeshi-619515168/"
               target="_blank"
               rel="noreferrer"
             >
@@ -58,7 +58,7 @@ function SiteFooter() {
             </a>
 
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/mr.atharvva/"
               target="_blank"
               rel="noreferrer"
             >
