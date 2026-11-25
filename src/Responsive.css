@@ -396,66 +396,6 @@
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .photo-intro-foot {
-    margin-top: 45px;
-    font-size: 7px;
-  }
-  .bento-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-rows: repeat(14, minmax(32px, 12vw));
-    gap: 8px;
-    margin-top: 20px;
-  }
-  .photo-frame figcaption {
-    right: 9px;
-    bottom: 9px;
-    left: 9px;
-    gap: 6px;
-    font-size: 6px;
-  }
-  .photo-frame-west {
-    grid-column: 1 / span 3;
-    grid-row: 1 / span 5;
-  }
-  .photo-frame-north-left {
-    grid-column: 4 / span 3;
-    grid-row: 1 / span 3;
-  }
-  .photo-frame-north-right {
-    grid-column: 1 / span 3;
-    grid-row: 6 / span 3;
-  }
-  .photo-frame-east {
-    grid-column: 4 / span 3;
-    grid-row: 4 / span 5;
-  }
-  .photo-frame-south-left {
-    grid-column: 1 / span 3;
-    grid-row: 12 / span 3;
-  }
-  .photo-frame-south-right {
-    grid-column: 4 / span 3;
-    grid-row: 12 / span 3;
-  }
-  .photo-video-frame {
-    grid-column: 1 / span 6;
-    grid-row: 9 / span 3;
-  }
-  .photo-video-kicker {
-    top: 10px;
-    left: 11px;
-    font-size: 7px;
-  }
-  .photo-video-play {
-    width: 38px;
-    height: 38px;
-    font-size: 11px;
-  }
-  .photo-video-frame figcaption {
-    right: 10px;
-    bottom: 9px;
-    left: 10px;
-  }
   .contact-intro {
     padding-bottom: 40px;
   }

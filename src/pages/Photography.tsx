@@ -1,60 +1,90 @@
 import './Photography.css';
 import SectionHeading from '../components/SectionHeading';
-import mountainValley from '../assets/place-mountain-valley.jpg';
-import monastery from '../assets/place-monastery.jpg';
-import mountainRoad from '../assets/place-mountain-road.jpg';
-import monasteryWindow from '../assets/place-monastery-window.jpg';
-import chortenDusk from '../assets/place-chorten-dusk.jpg';
-import alpineLake from '../assets/place-alpine-lake.jpg';
 
-const studies = [
+const photographs = [
   {
     number: '01',
-    label: 'Monastery above a high mountain valley',
-    caption: 'Monastery / hillside',
-    image: monastery,
-    className: 'photo-frame photo-frame-west',
+    label: 'India Gate illuminated at night',
+    caption: 'Delhi / after dark',
+    image: '/photography/india-gate-night.jpg',
   },
   {
     number: '02',
-    label: 'A river crossing a high desert valley',
-    caption: 'River / valley',
-    image: mountainValley,
-    className: 'photo-frame photo-frame-north-left',
+    label: 'Modern architecture in warm evening light',
+    caption: 'Architecture / evening',
+    image: '/photography/modern-architecture.jpg',
   },
   {
     number: '03',
-    label: 'Still water beneath a mountain range',
-    caption: 'Lake / mountain',
-    image: alpineLake,
-    className: 'photo-frame photo-frame-north-right',
+    label: 'A monastery in the Ladakh mountains',
+    caption: 'Ladakh / monastery',
+    image: '/photography/ladakh-monastery.jpg',
   },
   {
     number: '04',
-    label: 'Weathered timber window in a monastery courtyard',
-    caption: 'Material / detail',
-    image: monasteryWindow,
-    className: 'photo-frame photo-frame-east',
+    label: 'Clouds gathering above a mountain summit',
+    caption: 'Himalaya / weather',
+    image: '/photography/mountain-clouds.jpg',
   },
   {
     number: '05',
-    label: 'Mountain road winding across the high desert',
-    caption: 'Road / landscape',
-    image: mountainRoad,
-    className: 'photo-frame photo-frame-south-left',
+    label: 'Qutub Minar against the sky',
+    caption: 'Delhi / monument',
+    image: '/photography/qutub-minar.jpg',
   },
   {
     number: '06',
-    label: 'A white chorten overlooking a mountain ridge at dusk',
-    caption: 'Chorten / dusk',
-    image: chortenDusk,
-    className: 'photo-frame photo-frame-south-right',
+    label: 'The Taj Mahal framed by its gardens',
+    caption: 'Agra / symmetry',
+    image: '/photography/taj-mahal.jpg',
   },
   {
     number: '07',
-    label: 'Reserved slot for a short portfolio film',
-    caption: 'Video / 02:04',
-    className: 'photo-frame photo-video-frame',
+    label: 'Indian flags set against a Himalayan range',
+    caption: 'Himalaya / high pass',
+    image: '/photography/himalayan-flags.jpg',
+  },
+  {
+    number: '08',
+    label: 'A touring motorcycle on a high mountain road',
+    caption: 'Ladakh / open road',
+    image: '/photography/himalayan-motorcycle.jpg',
+  },
+  {
+    number: '09',
+    label: 'A motorcycle beneath the Himalayan peaks',
+    caption: 'Himalaya / crossing',
+    image: '/photography/mountain-crossing.jpg',
+  },
+  {
+    number: '10',
+    label: 'Snow-covered mountains beneath towering clouds',
+    caption: 'Himalaya / cloud break',
+    image: '/photography/snowy-valley.jpg',
+  },
+  {
+    number: '11',
+    label: 'A lone figure beside a lake at sunset',
+    caption: 'Ladakh / last light',
+    image: '/photography/lake-at-sunset.jpg',
+  },
+  {
+    number: '12',
+    label: 'An illuminated domed building at night',
+    caption: 'Architecture / after dark',
+    image: '/photography/dome-at-night.jpg',
+  },
+  {
+    number: '13',
+    label: 'A turquoise lake below snow-capped mountains',
+    caption: 'Ladakh / alpine lake',
+    image: '/photography/turquoise-lake.jpg',
+  },
+  {
+    number: '14',
+    label: 'Sunlight falling through an autumn forest',
+    caption: 'Forest / afternoon light',
+    image: '/photography/autumn-forest.jpg',
   },
 ];
 
@@ -62,46 +92,31 @@ function Photography() {
   return (
     <div className="page-shell photography-page">
       <header className="page-intro photo-intro">
-        <p className="eyebrow">PHOTOGRAPHY / 07</p>
+        <p className="eyebrow">PHOTOGRAPHY / 14</p>
         <h1>
           Looking<br />
           <span>closer.</span>
         </h1>
-        <p className="page-deck">A set of visual studies in landscape, architecture, and light. The images below are generated placeholders, not personal photographs.</p>
+        <p className="page-deck">A set of visual studies in landscape, architecture, and light, collected across India and the Himalaya.</p>
         <div className="photo-intro-foot">
           <span>PLACE / LIGHT / STRUCTURE</span>
-          <span>GENERATED IMAGE PLACEHOLDERS ↓</span>
+          <span>14 PHOTOGRAPHS ↓</span>
         </div>
       </header>
       <section className="photo-archive">
-        <SectionHeading index="01" label="Visual archive" note="One grid / six studies + a video slot" />
+        <SectionHeading index="01" label="Visual archive" note="One grid / fourteen photographs" />
         <div className="bento-grid">
-          {studies.map((study) => (
-            <figure className={study.className} key={study.number}>
-              {study.image ? (
-                <>
-                  <img
-                    src={study.image}
-                    alt={study.label}
-                    loading="lazy"
-                  />
-                  <figcaption>
-                    <span>{study.number}</span>
-                    <span>{study.caption}</span>
-                  </figcaption>
-                </>
-              ) : (
-                <>
-                  <div className="photo-video-art" role="img" aria-label="Video placeholder, 124-second film">
-                    <span className="photo-video-kicker">VIDEO / 02:04</span>
-                    <span className="photo-video-play" aria-hidden="true">▶</span>
-                  </div>
-                  <figcaption>
-                    <span>{study.number}</span>
-                    <span>124-second film placeholder</span>
-                  </figcaption>
-                </>
-              )}
+          {photographs.map((photograph) => (
+            <figure className="photo-frame" key={photograph.number}>
+              <img
+                src={photograph.image}
+                alt={photograph.label}
+                loading="lazy"
+              />
+              <figcaption>
+                <span>{photograph.number}</span>
+                <span>{photograph.caption}</span>
+              </figcaption>
             </figure>
           ))}
         </div>
