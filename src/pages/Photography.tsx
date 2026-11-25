@@ -91,6 +91,24 @@ const photographs = [
     caption: 'Forest / afternoon light',
     image: photographyAsset('autumn-forest.jpg'),
   },
+  {
+    number: '15',
+    label: 'Soft pink flowers in warm afternoon light',
+    caption: 'Flowers / soft focus',
+    image: photographyAsset('aesthetic-edited.jpg'),
+  },
+  {
+    number: '16',
+    label: 'A musician playing a red accordion',
+    caption: 'Portrait / street musician',
+    image: photographyAsset('passion-edited.jpg'),
+  },
+];
+
+const collagePhotographs = [
+  ...photographs.slice(9, 13),
+  photographs[14],
+  photographs[15],
 ];
 
 type Photograph = (typeof photographs)[number];
@@ -197,8 +215,8 @@ function Photography() {
             className="photo-column-three-foot"
           />
 
-          <div className="photo-collage" aria-label="More photographs">
-            {photographs.slice(9, 13).map((photograph) => (
+          <div className="photo-collage" aria-label="Six additional photographs">
+            {collagePhotographs.map((photograph) => (
               <figure className="photo-collage-frame" key={photograph.number}>
                 <img
                   src={photograph.image}
